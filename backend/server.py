@@ -69,6 +69,10 @@ async def get_status_checks():
 # Include the router in the main app
 app.include_router(api_router)
 
+# Register AI Concierge
+from concierge import register_concierge
+register_concierge(app, db)
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,

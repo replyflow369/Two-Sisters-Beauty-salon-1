@@ -101,3 +101,126 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Test the new AI Concierge backend endpoints for Two Sisters Beauty Salon"
+
+backend:
+  - task: "POST /api/concierge/chat - First chat without session_id"
+    implemented: true
+    working: true
+    file: "/app/backend/concierge.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "AI Concierge endpoint implemented using emergentintegrations LlmChat with gpt-5.4 model"
+      - working: true
+        agent: "testing"
+        comment: "✓ PASS - Returns HTTP 200 with session_id (uuid) and reply containing business hours (9am-6pm, Monday-Saturday, closed Sunday). Actual reply: 'We're open Monday to Saturday, 9:00am to 6:00pm, and closed on Sundays. If you'd like, you can book online via Timely, or call us on 03 930 0449.'"
+
+  - task: "POST /api/concierge/chat - Chat with session_id for price query"
+    implemented: true
+    working: true
+    file: "/app/backend/concierge.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Session-based chat with conversation history persistence in MongoDB"
+      - working: true
+        agent: "testing"
+        comment: "✓ PASS - Returns HTTP 200 with correct price information. Query 'How much is a Deluxe Facial?' correctly returns '$95 NZD'. Actual reply: 'Our Deluxe Facial is $95 NZD. If you'd like something a little different, we also offer: - Express Facial (45 min) $55 - Clear Skin Facial (1 hr) $80 - Calming Anti-Stress Facial (1 hr) $110'"
+
+  - task: "GET /api/concierge/history/{session_id} - Retrieve chat history"
+    implemented: true
+    working: true
+    file: "/app/backend/concierge.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "History endpoint retrieves messages from MongoDB sorted by created_at"
+      - working: true
+        agent: "testing"
+        comment: "✓ PASS - Returns HTTP 200 with messages array containing 4 items (2 user + 2 assistant) in chronological order. Roles alternate correctly starting with 'user'. Each message has role, content, and created_at fields."
+
+  - task: "POST /api/concierge/chat - Error handling for empty message"
+    implemented: true
+    working: true
+    file: "/app/backend/concierge.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Validation for empty messages implemented"
+      - working: true
+        agent: "testing"
+        comment: "✓ PASS - Returns HTTP 400 with error message 'Message is required' when empty message is sent. Proper error handling confirmed."
+
+  - task: "DELETE /api/concierge/history/{session_id} - Clear chat history"
+    implemented: true
+    working: true
+    file: "/app/backend/concierge.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Delete endpoint removes all messages for a session from MongoDB"
+      - working: true
+        agent: "testing"
+        comment: "✓ PASS - Returns HTTP 200 with {ok: true}. Verified that subsequent GET /api/concierge/history returns empty messages array. History successfully cleared."
+
+  - task: "GET /api/ - Legacy root endpoint"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Legacy endpoint exists from initial setup"
+      - working: true
+        agent: "testing"
+        comment: "✓ PASS - Returns HTTP 200 with {message: 'Hello World'}. Legacy endpoint still working correctly."
+
+frontend:
+  - task: "Frontend integration (not tested)"
+    implemented: false
+    working: "NA"
+    file: ""
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Frontend testing not performed as per testing agent protocol. Only backend APIs tested."
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "All AI Concierge backend endpoints tested and verified"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "testing"
+    message: "Completed comprehensive testing of all AI Concierge backend endpoints. All 6 tests passed successfully. The AI responses are high quality, contextually accurate, and contain correct business information (hours, prices). Session management, history persistence, and error handling all working correctly. Backend is production-ready."

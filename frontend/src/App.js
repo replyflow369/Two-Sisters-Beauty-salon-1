@@ -17,6 +17,7 @@ import Booking from './components/Booking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CursorOrb from './components/motion/CursorOrb';
+import Concierge from './components/Concierge';
 
 function useScrollReveal() {
   useEffect(() => {
@@ -75,6 +76,7 @@ const Home = () => {
       </main>
       <Footer />
       <Toaster />
+      <Concierge />
     </div>
   );
 };
