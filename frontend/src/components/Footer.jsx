@@ -1,6 +1,7 @@
 import React from 'react';
 import { Instagram, Facebook, ArrowUpRight } from 'lucide-react';
 import { BRAND, NAV } from '../mock';
+import MagneticButton from './motion/MagneticButton';
 
 export default function Footer() {
   return (
@@ -13,10 +14,10 @@ export default function Footer() {
           <h3 className="font-display text-[clamp(44px,7vw,96px)] leading-[.98] tracking-tight">
             Beautiful, considered care —<br /><span className="italic text-[hsl(var(--gold-soft))]">book yours today.</span>
           </h3>
-          <a href={BRAND.bookingUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center justify-between gap-4 h-16 pl-7 pr-2 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] uppercase tracking-[0.16em] font-medium text-[13px] transition-all hover:bg-[hsl(var(--gold-soft))]">
+          <MagneticButton as="a" href={BRAND.bookingUrl} target="_blank" rel="noreferrer" strength={18} className="group inline-flex items-center justify-between gap-4 h-16 pl-7 pr-2 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] uppercase tracking-[0.16em] font-medium text-[13px] hover:bg-[hsl(var(--gold-soft))]">
             Book an appointment
-            <span className="h-12 w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform group-hover:rotate-45"><ArrowUpRight className="h-5 w-5" /></span>
-          </a>
+            <span className="h-12 w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45"><ArrowUpRight className="h-5 w-5" /></span>
+          </MagneticButton>
         </div>
       </div>
 

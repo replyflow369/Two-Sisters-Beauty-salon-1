@@ -16,20 +16,28 @@ import FAQ from './components/FAQ';
 import Booking from './components/Booking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CursorOrb from './components/motion/CursorOrb';
 
 function useScrollReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal');
+    const els = document.querySelectorAll('.reveal, .mask-reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     els.forEach((el) => io.observe(el));
+
+    // Scroll progress bar
     const bar = document.getElementById('scroll-progress');
+    let raf;
     const onScroll = () => {
-      if (!bar) return;
-      const h = document.documentElement;
-      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-      bar.style.width = `${pct}%`;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        if (!bar) return;
+        const h = document.documentElement;
+        const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+        bar.style.transform = `scaleX(${pct / 100})`;
+      });
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => { io.disconnect(); window.removeEventListener('scroll', onScroll); };
@@ -49,6 +57,7 @@ const Home = () => {
   return (
     <div className="App bg-background text-foreground">
       <div id="scroll-progress" />
+      <CursorOrb />
       <Navigation />
       <main>
         <Hero />
