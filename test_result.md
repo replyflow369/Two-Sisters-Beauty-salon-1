@@ -119,6 +119,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✓ PASS - Returns HTTP 200 with session_id (uuid) and reply containing business hours (9am-6pm, Monday-Saturday, closed Sunday). Actual reply: 'We're open Monday to Saturday, 9:00am to 6:00pm, and closed on Sundays. If you'd like, you can book online via Timely, or call us on 03 930 0449.'"
+      - working: true
+        agent: "testing"
+        comment: "✓ REGRESSION TEST PASS - Opening hours query returns HTTP 200 with session_id and reply containing '9', 'Monday', and 'Sunday'. Reply initialization fix verified. Actual reply: 'We're open Monday to Saturday, 9:00am to 6:00pm, and closed on Sundays. If you'd like, I can also share our location or booking link.'"
 
   - task: "POST /api/concierge/chat - Chat with session_id for price query"
     implemented: true
@@ -134,6 +137,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✓ PASS - Returns HTTP 200 with correct price information. Query 'How much is a Deluxe Facial?' correctly returns '$95 NZD'. Actual reply: 'Our Deluxe Facial is $95 NZD. If you'd like something a little different, we also offer: - Express Facial (45 min) $55 - Clear Skin Facial (1 hr) $80 - Calming Anti-Stress Facial (1 hr) $110'"
+      - working: true
+        agent: "testing"
+        comment: "✓ REGRESSION TEST PASS - Clear Skin Facial price query returns HTTP 200 with correct price '$80 NZD'. Session persistence working correctly. Actual reply: 'Our Clear Skin Facial is $80 NZD for 1 hour. If you'd like, I can also share our other facial options or the booking link.'"
 
   - task: "GET /api/concierge/history/{session_id} - Retrieve chat history"
     implemented: true
@@ -149,6 +155,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✓ PASS - Returns HTTP 200 with messages array containing 4 items (2 user + 2 assistant) in chronological order. Roles alternate correctly starting with 'user'. Each message has role, content, and created_at fields."
+      - working: true
+        agent: "testing"
+        comment: "✓ REGRESSION TEST PASS - Returns HTTP 200 with 4 messages. Roles alternate correctly (user/assistant/user/assistant). History persistence verified after code-review fixes."
 
   - task: "POST /api/concierge/chat - Error handling for empty message"
     implemented: true
@@ -164,6 +173,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✓ PASS - Returns HTTP 400 with error message 'Message is required' when empty message is sent. Proper error handling confirmed."
+      - working: true
+        agent: "testing"
+        comment: "✓ REGRESSION TEST PASS - Three validation scenarios tested: (1) Empty body {} returns HTTP 422 with 'Field required', (2) Empty message '' returns HTTP 400 with 'Message is required', (3) Whitespace-only '   ' returns HTTP 400 with 'Message is required'. Code-review fix for message validation (line 100-101) working perfectly."
 
   - task: "DELETE /api/concierge/history/{session_id} - Clear chat history"
     implemented: true
@@ -179,6 +191,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✓ PASS - Returns HTTP 200 with {ok: true}. Verified that subsequent GET /api/concierge/history returns empty messages array. History successfully cleared."
+      - working: true
+        agent: "testing"
+        comment: "✓ REGRESSION TEST PASS - Returns HTTP 200 with {ok: true}. Verified history cleared (GET returns 0 messages). Delete functionality working correctly after code-review fixes."
 
   - task: "GET /api/ - Legacy root endpoint"
     implemented: true
@@ -194,6 +209,9 @@ backend:
       - working: true
         agent: "testing"
         comment: "✓ PASS - Returns HTTP 200 with {message: 'Hello World'}. Legacy endpoint still working correctly."
+      - working: true
+        agent: "testing"
+        comment: "✓ REGRESSION TEST PASS - Returns HTTP 200 with {message: 'Hello World'}. Legacy endpoint unaffected by code-review fixes."
 
 frontend:
   - task: "Frontend integration (not tested)"
@@ -211,12 +229,12 @@ frontend:
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 1
+  test_sequence: 2
   run_ui: false
 
 test_plan:
   current_focus:
-    - "All AI Concierge backend endpoints tested and verified"
+    - "Regression testing complete - all endpoints verified after code-review fixes"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -224,3 +242,5 @@ test_plan:
 agent_communication:
   - agent: "testing"
     message: "Completed comprehensive testing of all AI Concierge backend endpoints. All 6 tests passed successfully. The AI responses are high quality, contextually accurate, and contain correct business information (hours, prices). Session management, history persistence, and error handling all working correctly. Backend is production-ready."
+  - agent: "testing"
+    message: "REGRESSION TESTING COMPLETE - All 8 backend endpoint tests passed after code-review fixes. Verified: (1) Reply initialization fix (line 129) - working, (2) Empty reply rejection with HTTP 502 (lines 135-136) - code present and ready (not triggered as LLM returned valid replies), (3) Empty/whitespace message validation (lines 100-101) - working perfectly. Test results: Opening hours query ✓, Clear Skin Facial price $80 ✓, Empty body {} returns 422 ✓, Empty message returns 400 ✓, Whitespace-only returns 400 ✓, GET history with 4 messages ✓, DELETE history clears successfully ✓, Legacy endpoint ✓. Backend is stable and production-ready after fixes."

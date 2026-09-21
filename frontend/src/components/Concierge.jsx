@@ -36,7 +36,10 @@ export default function Concierge() {
           const hist = (data.messages || []).map((m, i) => ({ id: `h-${i}`, role: m.role, content: m.content }));
           setMessages(hist.length ? hist : [{ id: 'greet', role: 'assistant', content: GREETING }]);
         })
-        .catch(() => setMessages([{ id: 'greet', role: 'assistant', content: GREETING }]));
+        .catch((err) => {
+          console.warn('Concierge: failed to fetch history, starting fresh', err);
+          setMessages([{ id: 'greet', role: 'assistant', content: GREETING }]);
+        });
     } else {
       setMessages([{ id: 'greet', role: 'assistant', content: GREETING }]);
     }
@@ -72,7 +75,8 @@ export default function Concierge() {
       }
       setMessages((prev) => [...prev, { id: `a-${Date.now()}`, role: 'assistant', content: data.reply }]);
       if (!open) setUnread(true);
-    } catch (e) {
+    } catch (err) {
+      console.error('Concierge chat error:', err);
       setError('Sorry — I could not reach the concierge just now. Please try again.');
     } finally {
       setSending(false);
@@ -81,7 +85,12 @@ export default function Concierge() {
 
   const reset = async () => {
     if (sessionId) {
-      try { await axios.delete(`${API}/history/${sessionId}`); } catch {}
+      try {
+        await axios.delete(`${API}/history/${sessionId}`);
+      } catch (err) {
+        // Non-blocking: history clear failure shouldn't stop the UI reset.
+        console.warn('Concierge: failed to clear history on server', err);
+      }
     }
     sessionStorage.removeItem(SESSION_KEY);
     setSessionId(null);

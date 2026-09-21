@@ -34,7 +34,7 @@ export default function SplitText({ text, as: Tag = 'span', className = '', dela
   return (
     <Tag ref={ref} className={className}>
       {parts.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden align-baseline" style={{ marginRight: '0.22em' }}>
+        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-baseline" style={{ marginRight: '0.22em' }}>
           <span
             data-word
             className={`inline-block will-change-transform ${wordClassName}`}
@@ -44,8 +44,7 @@ export default function SplitText({ text, as: Tag = 'span', className = '', dela
               filter: 'blur(6px)',
               transition: 'opacity 900ms cubic-bezier(0.22, 1, 0.36, 1), transform 900ms cubic-bezier(0.22, 1, 0.36, 1), filter 900ms cubic-bezier(0.22, 1, 0.36, 1)',
             }}
-            dangerouslySetInnerHTML={{ __html: w }}
-          />
+          >{w}</span>
         </span>
       ))}
     </Tag>

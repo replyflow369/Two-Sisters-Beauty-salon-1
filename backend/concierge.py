@@ -126,10 +126,14 @@ def register_concierge(app, db):
         else:
             user_text = req.message
 
+        reply: str = ""
         try:
             reply = await chat_client.send_message(UserMessage(text=user_text))
-        except Exception as e:
-            raise HTTPException(502, f"Concierge is unavailable right now: {e}")
+        except Exception as e:  # noqa: BLE001
+            raise HTTPException(status_code=502, detail=f"Concierge is unavailable right now: {e}")
+
+        if not reply:
+            raise HTTPException(status_code=502, detail="Concierge returned an empty reply")
 
         await _save_message(db, session_id, "user", req.message)
         await _save_message(db, session_id, "assistant", reply)
