@@ -18,10 +18,10 @@ export const BRAND = {
 
 export const NAV = [
   { label: 'Services', href: '#services' },
+  { label: 'Before & After', href: '#before-after' },
   { label: 'Experience', href: '#experience' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'Reviews', href: '#reviews' },
   { label: 'Visit', href: '#contact' },
 ];
 
@@ -41,12 +41,7 @@ export const SERVICES = [
   { icon: Gem, key: 'piercing', title: 'Piercing', copy: 'Ear and nose piercing, including cubic zirconia and mirror ball options.', image: 'https://images.unsplash.com/photo-1643684391140-c5056cfd3436?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxzcGElMjBmYWNpYWx8ZW58MHx8fHwxNzg5OTAwMTIyfDA&ixlib=rb-4.1.0&q=85' },
 ];
 
-export const STATS = [
-  { value: 12, suffix: '+', label: 'Years of care' },
-  { value: 6800, suffix: '+', label: 'Happy clients' },
-  { value: 45, suffix: '', label: 'Signature treatments' },
-  { value: 4.9, suffix: '/5', label: 'Average rating', decimals: 1 },
-];
+export const STATS = [];
 
 export const PROCESS = [
   { step: '01', title: 'Consult', copy: 'A calm chat about your skin, style and what would make you feel your best.' },
@@ -64,11 +59,7 @@ export const GALLERY = [
   { src: 'https://images.unsplash.com/photo-1639629509821-c54cdd984227?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxleWVsYXNoJTIwZXh0ZW5zaW9ufGVufDB8fHx8MTc4OTkwMDEyOHww&ixlib=rb-4.1.0&q=85', tag: 'Brows', size: 'tall' },
 ];
 
-export const TESTIMONIALS = [
-  { name: 'Amelia Turner', role: 'Regular client, Merivale', quote: 'The most calming appointment in my week. My brows have never looked better, and Priya notices everything.', avatar: 'https://images.unsplash.com/photo-1672794776762-18dddc72982e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHxiZWF1dHklMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODk5MDAxMjh8MA&ixlib=rb-4.1.0&q=85', rating: 5 },
-  { name: 'Sophie Alexander', role: 'Bridal client, Christchurch', quote: 'A truly considered experience from the moment you walk in. My skin was glowing on my wedding day.', avatar: 'https://images.unsplash.com/photo-1603775020644-eb8decd79994?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHw0fHxiZWF1dHklMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODk5MDAxMjh8MA&ixlib=rb-4.1.0&q=85', rating: 5 },
-  { name: 'Isabella Reyes', role: 'New client, Richmond', quote: 'Honest, warm and completely unhurried. Best henna brows I have ever had — worth every dollar.', avatar: 'https://images.pexels.com/photos/17387800/pexels-photo-17387800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', rating: 5 },
-];
+export const TESTIMONIALS = [];
 
 export const FAQ = [
   { q: 'Do I need to book in advance?', a: 'We recommend booking a few days ahead, especially for Saturdays. Online booking through our system is the quickest way to secure your preferred time.' },

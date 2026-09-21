@@ -44,7 +44,7 @@ export default function Experience() {
           <div className="relative">
             <span className="font-serif text-[hsl(var(--gold-soft))] text-6xl leading-none">“</span>
             <p className="font-display text-[26px] md:text-[32px] leading-snug -mt-4">
-              Our goal is simple — help every client leave feeling fresh, confident and beautifully cared for.
+              We keep things small on purpose. Fewer clients each day, more time for each of them &mdash; that is how a treatment should feel.
             </p>
             <div className="mt-10 flex items-center gap-4">
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[hsl(var(--gold))]/40 font-serif italic text-[hsl(var(--gold-soft))]">Ts</span>

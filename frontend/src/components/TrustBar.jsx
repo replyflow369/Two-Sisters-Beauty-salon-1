@@ -4,7 +4,7 @@ import { TRUST } from '../mock';
 const VALUES = [
   'Considered beauty care',
   'Independent · family-run',
-  'Est. 2012 · Christchurch',
+  
   'Skin-friendly products',
   'Clear, upfront pricing',
   'Unhurried appointments',

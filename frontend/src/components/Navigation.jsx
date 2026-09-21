@@ -23,7 +23,7 @@ export default function Navigation() {
             <a href={BRAND.phoneHref} className="flex items-center gap-2 link-underline"><Phone className="h-3 w-3 text-[hsl(var(--gold-soft))]" /> {BRAND.phone}</a>
             <span className="opacity-70">{BRAND.address}</span>
           </div>
-          <span className="uppercase tracking-[0.28em] text-[10px] text-[hsl(var(--gold-soft))]">Christchurch · Est. 2012</span>
+          <span className="uppercase tracking-[0.28em] text-[10px] text-[hsl(var(--gold-soft))]">Richmond · Christchurch</span>
         </div>
       </div>
 

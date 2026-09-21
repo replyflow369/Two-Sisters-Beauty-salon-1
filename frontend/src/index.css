@@ -152,7 +152,7 @@
 *:focus-visible { outline: 2px solid hsl(var(--gold) / .8); outline-offset: 3px; border-radius: 6px; }
 
 /* Ken-Burns hero utility */
-.kenburns { animation: kenburns 26s ease-in-out infinite; will-change: transform; }
+.kenburns { animation: kenburns 36s ease-in-out infinite; will-change: transform; }
 @media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }
 
 /* Gold sweep highlight (used inside dark cards) */

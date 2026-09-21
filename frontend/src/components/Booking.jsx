@@ -29,6 +29,7 @@ export default function Booking() {
           <p className="mt-6 text-white/70 max-w-[420px]">Share your preferred service, date and time. We’ll confirm your appointment shortly — or book instantly online.</p>
           <a href={BRAND.bookingUrl} target="_blank" rel="noreferrer" className="mt-10 inline-flex items-center gap-3 pl-6 pr-2 h-14 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] font-medium tracking-[0.14em] uppercase text-[12px] transition-all hover:bg-[hsl(var(--gold-soft))] hover:-translate-y-0.5">Book instantly online<span className="h-11 w-11 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center"><ArrowUpRight className="h-4 w-4" /></span></a>
           <p className="mt-8 text-white/50 text-[13px]">Or call us on <a href={BRAND.phoneHref} className="text-white link-underline">{BRAND.phone}</a></p>
+          <p className="mt-4 text-white/45 text-[12px] tracking-wide">Easy online booking · Flexible appointments · Friendly, professional care</p>
         </div>
 
         <form onSubmit={submit} className="reveal grid sm:grid-cols-2 gap-5 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 sm:p-8 md:p-10">

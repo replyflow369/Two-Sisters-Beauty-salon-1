@@ -6,12 +6,11 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
 import Services from './components/Services';
+import BeforeAfter from './components/BeforeAfter';
 import Experience from './components/Experience';
-import Stats from './components/Stats';
 import Process from './components/Process';
 import Gallery from './components/Gallery';
 import Pricing from './components/Pricing';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Booking from './components/Booking';
 import Contact from './components/Contact';
@@ -27,7 +26,6 @@ function useScrollReveal() {
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     els.forEach((el) => io.observe(el));
 
-    // Scroll progress bar
     const bar = document.getElementById('scroll-progress');
     let raf;
     const onScroll = () => {
@@ -64,12 +62,11 @@ const Home = () => {
         <Hero />
         <TrustBar />
         <Services />
+        <BeforeAfter />
         <Experience />
-        <Stats />
         <Process />
         <Gallery />
         <Pricing />
-        <Testimonials />
         <FAQ />
         <Booking />
         <Contact />
