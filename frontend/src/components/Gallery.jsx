@@ -9,8 +9,8 @@ const spanClass = {
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-28 md:py-36 bg-[hsl(var(--paper))] dark:bg-[hsl(var(--ink-soft))]">
-      <div className="mx-auto max-w-[1240px] px-6">
+    <section id="gallery" className="py-20 sm:py-24 md:py-36 bg-[hsl(var(--paper))] dark:bg-[hsl(var(--ink-soft))]">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -22,7 +22,7 @@ export default function Gallery() {
           <p className="text-muted-foreground max-w-[380px]">A small sample of the moments and finishes our clients enjoy every week.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[220px] gap-4" style={{ gridAutoFlow: 'dense' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[220px] gap-3 sm:gap-4" style={{ gridAutoFlow: 'dense' }}>
           {GALLERY.map((g, i) => (
             <figure key={i} className={`reveal group relative overflow-hidden rounded-2xl ${spanClass[g.size] || ''}`} style={{ transitionDelay: `${i*70}ms` }}>
               <img src={g.src} alt={g.tag} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-110" />

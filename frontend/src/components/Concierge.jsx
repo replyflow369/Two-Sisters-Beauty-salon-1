@@ -101,7 +101,7 @@ export default function Concierge() {
       <button
         aria-label={open ? 'Close concierge' : 'Open concierge'}
         onClick={() => setOpen((v) => !v)}
-        className={`fixed z-[70] bottom-6 right-6 h-14 w-14 rounded-full flex items-center justify-center shadow-[0_20px_40px_-15px_hsl(var(--ink)/0.45)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? 'bg-[hsl(var(--ink))] text-[hsl(var(--gold))] rotate-90' : 'bg-[hsl(var(--gold))] text-[hsl(var(--ink))] hover:-translate-y-0.5 hover:shadow-[0_28px_50px_-15px_hsl(var(--gold)/0.55)]'}`}
+        className={`fixed z-[70] bottom-5 right-5 sm:bottom-6 sm:right-6 h-14 w-14 rounded-full flex items-center justify-center shadow-[0_20px_40px_-15px_hsl(var(--ink)/0.45)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? 'bg-[hsl(var(--ink))] text-[hsl(var(--gold))] rotate-90' : 'bg-[hsl(var(--gold))] text-[hsl(var(--ink))] hover:-translate-y-0.5 hover:shadow-[0_28px_50px_-15px_hsl(var(--gold)/0.55)] active:translate-y-0'}`}
       >
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-6 w-6" />}
         {!open && unread && <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-background animate-pulse" />}
@@ -109,7 +109,7 @@ export default function Concierge() {
 
       {/* Panel */}
       <div
-        className={`fixed z-[69] right-6 bottom-24 w-[min(400px,calc(100vw-2.5rem))] origin-bottom-right transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' : 'opacity-0 translate-y-4 scale-95 pointer-events-none'}`}
+        className={`fixed z-[69] right-4 sm:right-6 bottom-24 sm:bottom-24 w-[min(400px,calc(100vw-1.5rem))] origin-bottom-right transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' : 'opacity-0 translate-y-4 scale-95 pointer-events-none'}`}
       >
         <div className="rounded-3xl overflow-hidden border border-border/70 bg-background/95 backdrop-blur-xl shadow-[0_40px_80px_-20px_hsl(var(--ink)/0.35)]">
           {/* Header */}

@@ -9,20 +9,20 @@ export default function Footer() {
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-[hsl(var(--gold))]/8 blur-[140px]" />
 
       {/* Big CTA */}
-      <div className="relative mx-auto max-w-[1240px] px-6 pt-24 pb-16 border-b border-white/10">
-        <div className="grid lg:grid-cols-[1.4fr_.6fr] gap-10 items-end">
-          <h3 className="font-display text-[clamp(44px,7vw,96px)] leading-[.98] tracking-tight">
+      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 pt-20 sm:pt-24 pb-14 sm:pb-16 border-b border-white/10">
+        <div className="grid lg:grid-cols-[1.4fr_.6fr] gap-8 sm:gap-10 items-end">
+          <h3 className="font-display text-[clamp(38px,9vw,96px)] leading-[.98] tracking-tight">
             Beautiful, considered care —<br /><span className="italic text-[hsl(var(--gold-soft))]">book yours today.</span>
           </h3>
-          <MagneticButton as="a" href={BRAND.bookingUrl} target="_blank" rel="noreferrer" strength={18} className="group inline-flex items-center justify-between gap-4 h-16 pl-7 pr-2 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] uppercase tracking-[0.16em] font-medium text-[13px] hover:bg-[hsl(var(--gold-soft))]">
+          <MagneticButton as="a" href={BRAND.bookingUrl} target="_blank" rel="noreferrer" strength={18} className="group inline-flex items-center justify-between gap-4 h-14 sm:h-16 pl-6 sm:pl-7 pr-2 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] uppercase tracking-[0.16em] font-medium text-[12px] sm:text-[13px] hover:bg-[hsl(var(--gold-soft))]">
             Book an appointment
-            <span className="h-12 w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45"><ArrowUpRight className="h-5 w-5" /></span>
+            <span className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45"><ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" /></span>
           </MagneticButton>
         </div>
       </div>
 
       {/* Main */}
-      <div className="relative mx-auto max-w-[1240px] px-6 py-16 grid lg:grid-cols-4 gap-10">
+      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 py-16 grid lg:grid-cols-4 gap-10">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <span className="h-11 w-11 rounded-full border border-[hsl(var(--gold))]/60 inline-flex items-center justify-center font-serif italic text-[hsl(var(--gold-soft))]">Ts</span>
@@ -57,7 +57,7 @@ export default function Footer() {
       </div>
 
       <div className="relative border-t border-white/10">
-        <div className="mx-auto max-w-[1240px] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-white/50">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-white/50">
           <p>© {new Date().getFullYear()} {BRAND.name} {BRAND.tagline}. All rights reserved.</p>
           <p className="uppercase tracking-[0.28em] text-[10.5px]">Christchurch · New Zealand</p>
         </div>

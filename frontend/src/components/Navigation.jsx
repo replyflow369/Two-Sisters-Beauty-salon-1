@@ -28,17 +28,17 @@ export default function Navigation() {
       </div>
 
       <header className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-background/85 backdrop-blur-xl border-b border-border/60 shadow-[0_1px_0_0_hsl(var(--gold)/0.08)]' : 'bg-background/60 backdrop-blur-md'}`}>
-        <div className="mx-auto max-w-[1240px] px-6">
-          <div className="flex items-center justify-between h-[76px]">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
+          <div className="flex items-center justify-between h-[64px] sm:h-[76px]">
             {/* Brand */}
-            <a href="#top" className="flex items-center gap-3 group">
-              <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-[hsl(var(--gold))]/60 bg-gradient-to-br from-[hsl(var(--paper))] to-[hsl(var(--paper-2))] dark:from-[hsl(var(--ink-soft))] dark:to-[hsl(var(--ink))]">
-                <span className="font-serif text-[hsl(var(--gold-deep))] text-xl italic leading-none">Ts</span>
+            <a href="#top" className="flex items-center gap-2.5 sm:gap-3 group">
+              <span className="relative inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[hsl(var(--gold))]/60 bg-gradient-to-br from-[hsl(var(--paper))] to-[hsl(var(--paper-2))] dark:from-[hsl(var(--ink-soft))] dark:to-[hsl(var(--ink))]">
+                <span className="font-serif text-[hsl(var(--gold-deep))] text-lg sm:text-xl italic leading-none">Ts</span>
                 <span className="absolute -inset-0.5 rounded-full border border-[hsl(var(--gold))]/25 transition-opacity opacity-0 group-hover:opacity-100" />
               </span>
               <span>
-                <span className="block font-display text-[22px] leading-none tracking-tight">Two Sisters</span>
-                <span className="block text-[10px] uppercase tracking-[0.35em] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold-soft))] mt-1">Beauty Salon</span>
+                <span className="block font-display text-[18px] sm:text-[22px] leading-none tracking-tight">Two Sisters</span>
+                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.28em] sm:tracking-[0.35em] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold-soft))] mt-1">Beauty Salon</span>
               </span>
             </a>
 
@@ -49,10 +49,10 @@ export default function Navigation() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <ThemeToggle className="hidden sm:inline-flex" />
-              <a href={BRAND.bookingUrl} target="_blank" rel="noreferrer" className="hidden sm:inline-flex h-11 items-center px-5 rounded-full text-[12px] font-medium uppercase tracking-[0.18em] bg-[hsl(var(--ink))] text-[hsl(var(--paper))] dark:bg-[hsl(var(--gold))] dark:text-[hsl(var(--ink))] transition-all hover:translate-y-[-1px] hover:shadow-[0_10px_30px_-10px_hsl(var(--ink)/0.4)]">Book now</a>
-              <button aria-label="Menu" onClick={() => setOpen(true)} className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70"><Menu className="h-5 w-5" /></button>
+              <a href={BRAND.bookingUrl} target="_blank" rel="noreferrer" className="inline-flex h-10 sm:h-11 items-center px-4 sm:px-5 rounded-full text-[11px] sm:text-[12px] font-medium uppercase tracking-[0.16em] sm:tracking-[0.18em] bg-[hsl(var(--ink))] text-[hsl(var(--paper))] dark:bg-[hsl(var(--gold))] dark:text-[hsl(var(--ink))] transition-all hover:translate-y-[-1px] hover:shadow-[0_10px_30px_-10px_hsl(var(--ink)/0.4)] active:translate-y-0">Book<span className="hidden sm:inline">&nbsp;now</span></a>
+              <button aria-label="Menu" onClick={() => setOpen(true)} className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 active:bg-secondary"><Menu className="h-5 w-5" /></button>
             </div>
           </div>
         </div>

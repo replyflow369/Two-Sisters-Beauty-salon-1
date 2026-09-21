@@ -4,7 +4,7 @@ import { TRUST } from '../mock';
 export default function TrustBar() {
   return (
     <section className="relative bg-[hsl(var(--cream))] dark:bg-[hsl(var(--ink-soft))] border-y border-border/60">
-      <div className="mx-auto max-w-[1240px] px-6">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/60">
           {TRUST.map((t, i) => (
             <div key={t.title} className="reveal group flex items-start gap-4 p-6 md:p-8 first:pl-0 last:pr-0" style={{ transitionDelay: `${i*80}ms` }}>

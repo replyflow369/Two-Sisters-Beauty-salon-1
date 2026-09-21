@@ -6,8 +6,8 @@ import SplitText from './motion/SplitText';
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-28 md:py-36">
-      <div className="mx-auto max-w-[1240px] px-6">
+    <section id="services" className="relative py-20 sm:py-24 md:py-36">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-[720px]">
             <div className="flex items-center gap-3 mb-6 reveal">
@@ -27,7 +27,7 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s, i) => (
             <TiltCard key={s.key} max={5} className="reveal rounded-2xl" style={{ transitionDelay: `${i*70}ms` }}>
-              <a href="#pricing" className="group relative block overflow-hidden rounded-2xl border border-border/70 bg-card p-8 min-h-[340px] flex flex-col justify-between transition-[border-color,box-shadow] duration-500 hover:shadow-[0_40px_80px_-30px_hsl(var(--ink)/0.35)] hover:border-[hsl(var(--gold))]/60">
+              <a href="#pricing" className="group relative block overflow-hidden rounded-2xl border border-border/70 bg-card p-6 sm:p-8 min-h-[300px] sm:min-h-[340px] flex flex-col justify-between transition-[border-color,box-shadow] duration-500 hover:shadow-[0_40px_80px_-30px_hsl(var(--ink)/0.35)] hover:border-[hsl(var(--gold))]/60 active:scale-[0.99]">
                 <div className="absolute -top-6 -right-6 h-40 w-40 rounded-full overflow-hidden opacity-40 group-hover:opacity-95 transition-all duration-700 group-hover:scale-110">
                   <img src={s.image} alt="" className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[hsl(var(--ink))]/40 to-transparent" />

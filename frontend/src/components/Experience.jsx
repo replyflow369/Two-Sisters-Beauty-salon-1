@@ -11,12 +11,12 @@ const POINTS = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 md:py-36 bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden">
+    <section id="experience" className="relative py-20 sm:py-24 md:py-36 bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden">
       {/* Ornamental */}
       <div className="absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-[hsl(var(--gold))]/10 blur-[140px]" />
       <div className="absolute bottom-0 left-0 h-[360px] w-[360px] rounded-full bg-[hsl(var(--gold-deep))]/20 blur-[140px]" />
 
-      <div className="relative mx-auto max-w-[1240px] px-6 grid lg:grid-cols-[1.2fr_.8fr] gap-16 items-center">
+      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 grid lg:grid-cols-[1.2fr_.8fr] gap-16 items-center">
         <div>
           <div className="flex items-center gap-3 mb-6 reveal">
             <span className="h-px w-10 bg-[hsl(var(--gold-soft))]" />

@@ -4,8 +4,8 @@ import { BRAND } from '../mock';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-28 md:py-36">
-      <div className="mx-auto max-w-[1240px] px-6 grid lg:grid-cols-[1.1fr_.9fr] gap-14 lg:gap-20">
+    <section id="contact" className="py-20 sm:py-24 md:py-36">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6 grid lg:grid-cols-[1.1fr_.9fr] gap-14 lg:gap-20">
         <div className="reveal">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-10 bg-[hsl(var(--gold))]" />
@@ -40,7 +40,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <aside className="reveal rounded-3xl border border-border/70 bg-[hsl(var(--paper))] dark:bg-[hsl(var(--ink-soft))] p-8 md:p-10">
+        <aside className="reveal rounded-3xl border border-border/70 bg-[hsl(var(--paper))] dark:bg-[hsl(var(--ink-soft))] p-6 sm:p-8 md:p-10">
           <h3 className="font-display text-3xl">Opening hours</h3>
           <ul className="mt-6 divide-y divide-border/60">
             {BRAND.hours.map((h) => (

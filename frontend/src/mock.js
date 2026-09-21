@@ -13,7 +13,7 @@ export const BRAND = {
     { day: 'Saturday', time: '9:00 am – 6:00 pm' },
     { day: 'Sunday', time: 'Closed' },
   ],
-  bookingUrl: 'https://bookings.gettimely.com/YOUR-TIMELY-BUSINESS-NAME/bb/book',
+  bookingUrl: 'https://bookings.gettimely.com/twosistersbeautysalon/bb/book',
 };
 
 export const NAV = [

@@ -3,8 +3,8 @@ import { PROCESS } from '../mock';
 
 export default function Process() {
   return (
-    <section className="py-28 md:py-36">
-      <div className="mx-auto max-w-[1240px] px-6">
+    <section className="py-20 sm:py-24 md:py-36">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
         <div className="max-w-[680px] mb-16 reveal">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-10 bg-[hsl(var(--gold))]" />

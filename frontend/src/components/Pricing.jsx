@@ -16,8 +16,8 @@ export default function Pricing() {
   const cat = PRICING[active];
 
   return (
-    <section id="pricing" className="py-28 md:py-36">
-      <div className="mx-auto max-w-[1240px] px-6">
+    <section id="pricing" className="py-20 sm:py-24 md:py-36">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
         <div className="text-center max-w-[720px] mx-auto reveal">
           <div className="flex items-center justify-center gap-3 mb-6">
             <span className="h-px w-10 bg-[hsl(var(--gold))]" />
@@ -36,9 +36,9 @@ export default function Pricing() {
         </div>
 
         {/* Content */}
-        <div className="mt-10 max-w-[900px] mx-auto rounded-3xl border border-border/70 bg-[hsl(var(--paper))] dark:bg-[hsl(var(--ink-soft))] p-8 md:p-12">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="font-display text-3xl md:text-4xl">{cat.title}</h3>
+        <div className="mt-10 max-w-[900px] mx-auto rounded-3xl border border-border/70 bg-[hsl(var(--paper))] dark:bg-[hsl(var(--ink-soft))] p-5 sm:p-8 md:p-12">
+          <div className="flex items-center justify-between mb-6 sm:mb-8">
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl">{cat.title}</h3>
             <span className="hidden md:inline text-[11px] uppercase tracking-[0.28em] text-muted-foreground">All prices in NZD</span>
           </div>
           <div className="grid gap-8">
@@ -53,11 +53,11 @@ export default function Pricing() {
                 )}
                 <ul className="divide-y divide-border/60">
                   {g.items.map(([name, price], i) => (
-                    <li key={i} className="flex items-baseline justify-between gap-5 py-3.5 group">
-                      <span className="text-[15px] text-foreground/90 group-hover:text-foreground transition-colors">{name}</span>
-                      <span className="flex items-center gap-3">
+                    <li key={i} className="flex items-baseline justify-between gap-3 sm:gap-5 py-3.5 group">
+                      <span className="text-[14px] sm:text-[15px] text-foreground/90 group-hover:text-foreground transition-colors">{name}</span>
+                      <span className="flex items-center gap-2 sm:gap-3 shrink-0">
                         <span className="hidden sm:block flex-1 border-b border-dotted border-border/70 min-w-[40px]" />
-                        <span className="font-medium text-[15px] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold))] whitespace-nowrap">{price}</span>
+                        <span className="font-medium text-[14px] sm:text-[15px] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold))] whitespace-nowrap">{price}</span>
                       </span>
                     </li>
                   ))}

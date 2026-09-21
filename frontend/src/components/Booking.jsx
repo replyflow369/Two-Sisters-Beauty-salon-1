@@ -17,9 +17,9 @@ export default function Booking() {
   };
 
   return (
-    <section id="booking" className="relative py-28 md:py-36 bg-[hsl(var(--ink-soft))] text-[hsl(var(--paper))] overflow-hidden">
+    <section id="booking" className="relative py-20 sm:py-24 md:py-36 bg-[hsl(var(--ink-soft))] text-[hsl(var(--paper))] overflow-hidden">
       <div className="absolute -left-40 top-0 h-[520px] w-[520px] rounded-full bg-[hsl(var(--gold))]/10 blur-[140px]" />
-      <div className="relative mx-auto max-w-[1240px] px-6 grid lg:grid-cols-[1fr_1.15fr] gap-14 lg:gap-20 items-start">
+      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 grid lg:grid-cols-[1fr_1.15fr] gap-14 lg:gap-20 items-start">
         <div className="reveal">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-10 bg-[hsl(var(--gold-soft))]" />
@@ -31,7 +31,7 @@ export default function Booking() {
           <p className="mt-8 text-white/50 text-[13px]">Or call us on <a href={BRAND.phoneHref} className="text-white link-underline">{BRAND.phone}</a></p>
         </div>
 
-        <form onSubmit={submit} className="reveal grid sm:grid-cols-2 gap-5 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 md:p-10">
+        <form onSubmit={submit} className="reveal grid sm:grid-cols-2 gap-5 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 sm:p-8 md:p-10">
           {[
             { k: 'name', label: 'Your name', type: 'text', ph: 'Amelia Turner' },
             { k: 'phone', label: 'Phone', type: 'tel', ph: '021 123 4567' },

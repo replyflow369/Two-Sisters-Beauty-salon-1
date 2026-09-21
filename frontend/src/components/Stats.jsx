@@ -43,7 +43,7 @@ function Stat({ item }) {
 export default function Stats() {
   return (
     <section className="py-24 md:py-32 border-y border-border/60">
-      <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8">
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8">
         {STATS.map((s) => <Stat key={s.label} item={s} />)}
       </div>
     </section>
