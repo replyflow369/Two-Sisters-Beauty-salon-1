@@ -32,7 +32,7 @@ function Stat({ item }) {
   const [ref, display] = useCountUp(item.value, item.decimals || 0);
   return (
     <div ref={ref} className="reveal text-center md:text-left">
-      <div className="font-display text-[64px] md:text-[84px] leading-none tracking-tight">
+      <div className="font-display text-[64px] md:text-[84px] leading-none tracking-tight tnum">
         {display}<span className="text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold))]">{item.suffix}</span>
       </div>
       <p className="mt-3 text-[13px] uppercase tracking-[0.3em] text-muted-foreground">{item.label}</p>

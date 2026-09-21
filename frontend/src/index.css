@@ -85,6 +85,16 @@
 @keyframes fadeUp { from{ opacity:0; transform: translateY(24px) } to{ opacity:1; transform:none } }
 @keyframes gradientShift { 0%,100%{ background-position: 0% 50% } 50%{ background-position: 100% 50% } }
 @keyframes pulseGlow { 0%,100%{ box-shadow: 0 0 0 0 hsl(var(--gold) / .35) } 50%{ box-shadow: 0 0 0 14px hsl(var(--gold) / 0) } }
+@keyframes kenburns {
+  0% { transform: translate3d(0, 0, 0) scale(1.08); }
+  50% { transform: translate3d(-1.5%, -1%, 0) scale(1.14); }
+  100% { transform: translate3d(0, 0, 0) scale(1.08); }
+}
+@keyframes goldSweep {
+  0% { transform: translateX(-120%) skewX(-16deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(240%) skewX(-16deg); opacity: 0; }
+}
 
 .animate-floaty { animation: floaty 8s ease-in-out infinite; }
 
@@ -119,6 +129,36 @@
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   opacity: .35; mix-blend-mode: overlay;
 }
+
+/* Global film grain for dark sections (used with .grain) */
+.grain { position: relative; isolation: isolate; }
+.grain::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  opacity: .16; mix-blend-mode: soft-light;
+}
+
+/* Tabular figures for prices & stats */
+.tnum { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Marquee edge fade (used with .marquee-mask on a wrapper) */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+/* Refined focus ring for keyboard nav */
+*:focus-visible { outline: 2px solid hsl(var(--gold) / .8); outline-offset: 3px; border-radius: 6px; }
+
+/* Ken-Burns hero utility */
+.kenburns { animation: kenburns 26s ease-in-out infinite; will-change: transform; }
+@media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }
+
+/* Gold sweep highlight (used inside dark cards) */
+.gold-sweep { position: absolute; top: 0; bottom: 0; width: 30%; pointer-events: none;
+  background: linear-gradient(90deg, transparent, hsl(var(--gold) / .10), transparent);
+  animation: goldSweep 7s ease-in-out infinite; }
 
 /* Gold shimmering hairline */
 .hairline { height: 1px; background: linear-gradient(90deg, transparent, hsl(var(--gold) / .8), transparent); }

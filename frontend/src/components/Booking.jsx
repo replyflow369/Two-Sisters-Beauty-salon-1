@@ -17,7 +17,7 @@ export default function Booking() {
   };
 
   return (
-    <section id="booking" className="relative py-20 sm:py-24 md:py-36 bg-[hsl(var(--ink-soft))] text-[hsl(var(--paper))] overflow-hidden">
+    <section id="booking" className="relative py-20 sm:py-24 md:py-36 bg-[hsl(var(--ink-soft))] text-[hsl(var(--paper))] overflow-hidden grain">
       <div className="absolute -left-40 top-0 h-[520px] w-[520px] rounded-full bg-[hsl(var(--gold))]/10 blur-[140px]" />
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 grid lg:grid-cols-[1fr_1.15fr] gap-14 lg:gap-20 items-start">
         <div className="reveal">

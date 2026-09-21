@@ -57,7 +57,7 @@ export default function Pricing() {
                       <span className="text-[14px] sm:text-[15px] text-foreground/90 group-hover:text-foreground transition-colors">{name}</span>
                       <span className="flex items-center gap-2 sm:gap-3 shrink-0">
                         <span className="hidden sm:block flex-1 border-b border-dotted border-border/70 min-w-[40px]" />
-                        <span className="font-medium text-[14px] sm:text-[15px] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold))] whitespace-nowrap">{price}</span>
+                        <span className="font-medium text-[14px] sm:text-[15px] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold))] whitespace-nowrap tnum">{price}</span>
                       </span>
                     </li>
                   ))}

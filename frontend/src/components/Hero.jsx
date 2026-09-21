@@ -5,13 +5,11 @@ import SplitText from './motion/SplitText';
 import MagneticButton from './motion/MagneticButton';
 
 export default function Hero() {
-  const parallaxRef = useRef(null);
   const orbsRef = useRef(null);
 
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let raf; let sy = 0; let mx = 0, my = 0;
-    const onScroll = () => { sy = window.scrollY; if (!raf) raf = requestAnimationFrame(apply); };
+    let raf; let mx = 0, my = 0;
     const onMove = (e) => {
       const w = window.innerWidth, h = window.innerHeight;
       mx = (e.clientX / w - 0.5);
@@ -20,30 +18,27 @@ export default function Hero() {
     };
     const apply = () => {
       raf = null;
-      if (parallaxRef.current) {
-        const scale = 1.08 + Math.min(sy / 4000, 0.06);
-        parallaxRef.current.style.transform = `translate3d(${mx * 12}px, ${sy * 0.22 + my * 10}px, 0) scale(${scale})`;
-      }
       if (orbsRef.current) {
         orbsRef.current.style.setProperty('--mx', `${mx * 40}px`);
         orbsRef.current.style.setProperty('--my', `${my * 40}px`);
       }
     };
     if (!reduce) {
-      window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('mousemove', onMove, { passive: true });
     }
     apply();
-    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('mousemove', onMove); if (raf) cancelAnimationFrame(raf); };
+    return () => { window.removeEventListener('mousemove', onMove); if (raf) cancelAnimationFrame(raf); };
   }, []);
 
   return (
     <section id="top" className="relative overflow-hidden isolate min-h-[92vh] flex items-end">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <img ref={parallaxRef} src={HERO_IMAGE} alt="Two Sisters Beauty Salon interior" className="h-full w-full object-cover object-[65%_50%] sm:object-center will-change-transform" />
+        <img src={HERO_IMAGE} alt="Two Sisters Beauty Salon interior" className="h-full w-full object-cover object-[65%_50%] sm:object-center will-change-transform kenburns" />
         <div className="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--ink))]/75 sm:via-[hsl(var(--ink))]/70 to-[hsl(var(--ink))]/60 sm:to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--ink))]/90 via-transparent to-[hsl(var(--ink))]/30" />
+        {/* Cinematic vignette */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 55%, transparent 40%, hsla(0,0%,0%,0.55) 100%)' }} />
         <div className="absolute -left-40 top-1/3 h-[520px] w-[520px] rounded-full bg-[hsl(var(--gold))]/15 blur-[120px]" />
         <div className="absolute right-[-10%] bottom-[-10%] h-[460px] w-[460px] rounded-full bg-[hsl(var(--gold-deep))]/20 blur-[120px]" />
       </div>

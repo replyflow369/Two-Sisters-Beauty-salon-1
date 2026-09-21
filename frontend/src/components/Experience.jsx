@@ -11,7 +11,7 @@ const POINTS = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-20 sm:py-24 md:py-36 bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden">
+    <section id="experience" className="relative py-20 sm:py-24 md:py-36 bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden grain">
       {/* Ornamental */}
       <div className="absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full bg-[hsl(var(--gold))]/10 blur-[140px]" />
       <div className="absolute bottom-0 left-0 h-[360px] w-[360px] rounded-full bg-[hsl(var(--gold-deep))]/20 blur-[140px]" />

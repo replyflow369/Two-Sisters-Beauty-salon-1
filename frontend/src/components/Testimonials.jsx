@@ -12,7 +12,7 @@ export default function Testimonials() {
   const t = TESTIMONIALS[i];
 
   return (
-    <section id="reviews" className="relative py-20 sm:py-24 md:py-36 overflow-hidden bg-[hsl(var(--ink))] text-[hsl(var(--paper))]">
+    <section id="reviews" className="relative py-20 sm:py-24 md:py-36 overflow-hidden bg-[hsl(var(--ink))] text-[hsl(var(--paper))] grain">
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[720px] rounded-full bg-[hsl(var(--gold))]/10 blur-[140px]" />
 
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6">

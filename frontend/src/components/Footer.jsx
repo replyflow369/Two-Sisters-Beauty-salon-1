@@ -5,7 +5,7 @@ import MagneticButton from './motion/MagneticButton';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden">
+    <footer className="relative bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden grain">
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-[hsl(var(--gold))]/8 blur-[140px]" />
 
       {/* Big CTA */}
