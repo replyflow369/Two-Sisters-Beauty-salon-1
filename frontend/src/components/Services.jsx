@@ -10,7 +10,7 @@ export default function Services() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-[720px]">
-            <div className="flex items-center gap-3 mb-6 reveal">
+            <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-10 bg-[hsl(var(--gold))]" />
               <span className="text-[11px] uppercase tracking-[0.35em] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold-soft))]">Our services</span>
             </div>
@@ -21,24 +21,27 @@ export default function Services() {
               stagger={55}
             />
           </div>
-          <p className="text-muted-foreground text-[16px] max-w-[420px] reveal">Focused beauty care for skin, brows, face and body — delivered with an unhurried attention to detail.</p>
+          <p className="text-muted-foreground text-[16px] max-w-[420px]">Focused beauty care for skin, brows, face and body — delivered with an unhurried attention to detail.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((s, i) => (
-            <TiltCard key={s.key} max={5} className="reveal rounded-2xl" style={{ transitionDelay: `${i*70}ms` }}>
+           <TiltCard
+  key={s.key}
+  max={5}
+  className="rounded-2xl"
+>
               <a href="#pricing" className="group relative block overflow-hidden rounded-2xl border border-border/70 bg-card p-6 sm:p-8 min-h-[300px] sm:min-h-[340px] flex flex-col justify-between transition-[border-color,box-shadow] duration-500 hover:shadow-[0_40px_80px_-30px_hsl(var(--ink)/0.35)] hover:border-[hsl(var(--gold))]/60 active:scale-[0.99]">
                 <div className="absolute -top-6 -right-6 h-40 w-40 rounded-full overflow-hidden opacity-40 group-hover:opacity-95 transition-all duration-700 group-hover:scale-110">
-                  <img
-  src={s.image}
-  alt={s.title}
-  className="h-full w-full object-cover"
-  loading="eager"
-  fetchPriority="high"
-  decoding="async"
-  width="600"
-  height="700"
-/>
+                  <img src={s.image}
+                       alt={s.title}
+                        className="h-full w-full object-cover"
+                          loading="eager"
+                            fetchPriority="high"
+                              decoding="async"
+                              width="600"
+                             height="700"
+                              />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[hsl(var(--ink))]/40 to-transparent" />
                 </div>
                 <div className="relative">
