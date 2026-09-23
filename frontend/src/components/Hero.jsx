@@ -57,7 +57,7 @@ export default function Hero() {
   <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
     {/* Premium Moving Announcement Bar */}
-<div className="mb-6 overflow-hidden rounded-full border border-[hsl(var(--gold))]/40 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/15 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_20px_50px_-20px_hsl(var(--gold)/0.35)]">
+<div className="mb-6 w-full max-w-[900px] overflow-hidden rounded-full border border-[hsl(var(--gold))]/40 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/15 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_20px_50px_-20px_hsl(var(--gold)/0.35)]">
 
   <div className="announcement-track">
 
