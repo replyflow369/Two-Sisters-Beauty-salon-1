@@ -70,7 +70,7 @@ export default function Hero() {
       <span>•</span>
       <span>BOOK NOW</span>
       <span>•</span>
-      <span>ENDS 30 SEPTEMBER</span>
+      <span>ENDS 21st October 2026</span>
       <span>•</span>
 
       <span>✨</span>
@@ -80,7 +80,7 @@ export default function Hero() {
       <span>•</span>
       <span>BOOK NOW</span>
       <span>•</span>
-      <span>ENDS 30 SEPTEMBER</span>
+      <span>ENDS 21St October 2026</span>
       <span>•</span>
 
     </div>
