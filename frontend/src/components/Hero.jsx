@@ -50,6 +50,31 @@ export default function Hero() {
         <span className="absolute top-[62%] right-[28%] h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))]/70 animate-floaty" style={{ animationDelay: '2.4s', transform: 'translate3d(calc(var(--mx) * -1), calc(var(--my) * -1), 0)', transition: 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)' }} />
         <span className="absolute top-[46%] left-[54%] h-1 w-1 rounded-full bg-[hsl(var(--gold-soft))]/60 animate-floaty" style={{ animationDelay: '.6s', transform: 'translate3d(calc(var(--mx) * 1.8), calc(var(--my) * 1.8), 0)', transition: 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)' }} />
       </div>
+       <div className="mt-5 reveal">
+  <div className="inline-flex items-center gap-3 rounded-full border border-[hsl(var(--gold))]/40 bg-[hsl(var(--ink))]/60 backdrop-blur-md px-5 py-3 shadow-[0_12px_30px_-12px_hsl(var(--gold)/0.35)]">
+
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] text-sm">
+      ✨
+    </span>
+
+    <div className="leading-tight">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--gold-soft))]">
+        Limited Time Offer
+      </p>
+
+      <p className="font-semibold text-white">
+        50% OFF All Beauty Services
+      </p>
+
+      <p className="text-[11px] text-white/70 mt-1">
+        Ends 21st October 2026
+      </p>
+    </div>
+
+  </div>
+</div>
+    <div className="mt-7 mb-2 w-24 h-px bg-[hsl(var(--gold))]/70 reveal" />
+  
       <div className="mx-auto max-w-[1240px] px-5 sm:px-6 w-full pb-20 sm:pb-28 pt-32 sm:pt-44 text-[hsl(var(--paper))] relative z-[2]">
   <div className="max-w-[900px]">
       <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
