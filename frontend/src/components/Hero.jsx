@@ -56,23 +56,39 @@ export default function Hero() {
   <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
     Now taking bookings · Christchurch
-    <div className="inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-white text-sm font-semibold mt-4 animate-pulse">
-  🔥 Limited Time – 50% OFF All Services
-</div>
-  </span>
-</div>
+   <div className="mt-5 reveal">
+  <div className="inline-flex items-center gap-3 rounded-full border border-[hsl(var(--gold))]/40 bg-[hsl(var(--ink))]/60 backdrop-blur-md px-5 py-3 shadow-[0_12px_30px_-12px_hsl(var(--gold)/0.35)]">
 
-<div className="inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-white text-sm font-semibold mt-4 animate-pulse">
-  🔥 Limited Time – 50% OFF All Services
-</div>
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] text-sm">
+      ✨
+    </span>
 
+    <div className="leading-tight">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--gold-soft))]">
+        Limited Time Offer
+      </p>
+
+      <p className="font-semibold text-white">
+        50% OFF All Beauty Services
+      </p>
+
+      <p className="text-[11px] text-white/70 mt-1">
+        Ends 21st October 2026
+      </p>
+    </div>
+
+  </div>
+</div>
+    <div className="mt-7 mb-2 w-24 h-px bg-[hsl(var(--gold))]/70 reveal" />
+     </span>
+</div>
 <SplitText
   as="h1"
   text="Beauty care that feels personal."
-  className="font-display mt-8 sm:mt-10 text-[clamp(48px,11vw,120px)] leading-[0.98] sm:leading-[0.94] tracking-tight block"
+  className="font-display mt-10 sm:mt-12 text-[clamp(48px,11vw,120px)] leading-[0.98] sm:leading-[0.94] tracking-tight block"
   stagger={55}
 />
-          <p className="reveal max-w-[600px] mt-7 sm:mt-10 text-[16.5px] sm:text-[19px] leading-[1.65] text-white/80">
+          <p className="reveal max-w-[600px] mt-7 sm:mt-10 text-[16.5px] sm:text-[19px] leading-[1.65] text-white/75">
             A small, considered salon on Stanmore Road. Facials, brows, threading, waxing and nails — delivered slowly, by hands that know what they are doing.
           </p>
 
