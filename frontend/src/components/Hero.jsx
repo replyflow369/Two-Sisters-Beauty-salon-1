@@ -56,31 +56,38 @@ export default function Hero() {
       <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
   <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
-    Now taking bookings · Christchurch
-   <div className="mt-5 reveal">
-  <div className="inline-flex items-center gap-3 rounded-full border border-[hsl(var(--gold))]/40 bg-[hsl(var(--ink))]/60 backdrop-blur-md px-5 py-3 shadow-[0_12px_30px_-12px_hsl(var(--gold)/0.35)]">
+    {/* Premium Moving Announcement Bar */}
+<div className="mb-6 overflow-hidden rounded-full border border-[hsl(var(--gold))]/40 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/15 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_20px_50px_-20px_hsl(var(--gold)/0.35)]">
 
-    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] text-sm">
-      ✨
-    </span>
+  <div className="announcement-track">
 
-    <div className="leading-tight">
-      <p className="text-[11px] uppercase tracking-[0.22em] text-[hsl(var(--gold-soft))]">
-        Limited Time Offer
-      </p>
+    <div className="announcement-content">
 
-      <p className="font-semibold text-white">
-        50% OFF All Beauty Services
-      </p>
+      <span>✨</span>
+      <span>LIMITED TIME</span>
+      <span>•</span>
+      <span>50% OFF ALL SERVICES</span>
+      <span>•</span>
+      <span>BOOK NOW</span>
+      <span>•</span>
+      <span>ENDS 30 SEPTEMBER</span>
+      <span>•</span>
 
-      <p className="text-[11px] text-white/70 mt-1">
-        Ends 21st October 2026
-      </p>
+      <span>✨</span>
+      <span>LIMITED TIME</span>
+      <span>•</span>
+      <span>50% OFF ALL SERVICES</span>
+      <span>•</span>
+      <span>BOOK NOW</span>
+      <span>•</span>
+      <span>ENDS 30 SEPTEMBER</span>
+      <span>•</span>
+
     </div>
 
   </div>
 </div>
-    <div className="mt-7 mb-2 w-24 h-px bg-[hsl(var(--gold))]/70 reveal" />
+    Now taking bookings · Christchurch
      </span>
 </div>
 <SplitText
