@@ -53,20 +53,23 @@ export default function Hero() {
         <span className="absolute top-[46%] left-[54%] h-1 w-1 rounded-full bg-[hsl(var(--gold-soft))]/60 animate-floaty" style={{ animationDelay: '.6s', transform: 'translate3d(calc(var(--mx) * 1.8), calc(var(--my) * 1.8), 0)', transition: 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)' }} />
       </div>
 
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-6 w-full pb-20 sm:pb-28 pt-32 sm:pt-44 text-[hsl(var(--paper))] relative z-[2]">
-        <div className="max-w-[900px]">
-          <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
-            <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">Now taking bookings · Christchurch</span>
-          </div>
+      <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
+  <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
+  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
+    Now taking bookings · Christchurch
+  </span>
+</div>
 
-          <SplitText
-            as="h1"
-            text="Beauty care that feels personal."
-            className="font-display mt-8 sm:mt-10 text-[clamp(48px,11vw,120px)] leading-[0.98] sm:leading-[0.94] tracking-tight block"
-            stagger={55}
-          />
+<div className="inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-white text-sm font-semibold mt-4 animate-pulse">
+  🔥 Limited Time – 50% OFF All Services
+</div>
 
+<SplitText
+  as="h1"
+  text="Beauty care that feels personal."
+  className="font-display mt-8 sm:mt-10 text-[clamp(48px,11vw,120px)] leading-[0.98] sm:leading-[0.94] tracking-tight block"
+  stagger={55}
+/>
           <p className="reveal max-w-[600px] mt-7 sm:mt-10 text-[16.5px] sm:text-[19px] leading-[1.65] text-white/80">
             A small, considered salon on Stanmore Road. Facials, brows, threading, waxing and nails — delivered slowly, by hands that know what they are doing.
           </p>
