@@ -29,7 +29,9 @@ export default function Hero() {
     apply();
     return () => { window.removeEventListener('mousemove', onMove); if (raf) cancelAnimationFrame(raf); };
   }, []);
-
+<div className="inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-white text-sm font-semibold mb-6 animate-pulse">
+  🔥 Limited Time – 50% OFF All Services
+</div>
   return (
     <section id="top" className="relative overflow-hidden isolate min-h-[92vh] flex items-end">
       {/* Background image */}
