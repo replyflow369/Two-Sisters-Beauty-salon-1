@@ -50,11 +50,15 @@ export default function Hero() {
         <span className="absolute top-[62%] right-[28%] h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))]/70 animate-floaty" style={{ animationDelay: '2.4s', transform: 'translate3d(calc(var(--mx) * -1), calc(var(--my) * -1), 0)', transition: 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)' }} />
         <span className="absolute top-[46%] left-[54%] h-1 w-1 rounded-full bg-[hsl(var(--gold-soft))]/60 animate-floaty" style={{ animationDelay: '.6s', transform: 'translate3d(calc(var(--mx) * 1.8), calc(var(--my) * 1.8), 0)', transition: 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)' }} />
       </div>
-
+      <div className="mx-auto max-w-[1240px] px-5 sm:px-6 w-full pb-20 sm:pb-28 pt-32 sm:pt-44 text-[hsl(var(--paper))] relative z-[2]">
+  <div className="max-w-[900px]">
       <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
   <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
     Now taking bookings · Christchurch
+    <div className="inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-white text-sm font-semibold mt-4 animate-pulse">
+  🔥 Limited Time – 50% OFF All Services
+</div>
   </span>
 </div>
 
