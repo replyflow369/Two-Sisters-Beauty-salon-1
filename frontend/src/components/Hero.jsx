@@ -56,72 +56,57 @@ export default function Hero() {
       <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
   <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
   <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
-    {/* Premium Moving Announcement Bar */}
-<div className="mb-5 w-full overflow-hidden rounded-2xl border border-[hsl(var(--gold))]/35 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
+   
+{/* Premium Announcement */}
 
-  <div className="announcement-track">
+<div className="mb-5 w-full">
 
-    <div className="announcement-content">
+  {/* Desktop (moving) */}
+  <div className="hidden sm:block overflow-hidden rounded-2xl border border-[hsl(var(--gold))]/35 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
 
-      <span>✨</span>
-      <span>LIMITED TIME</span>
-      <span>•</span>
-      <span>50% OFF ALL SERVICES</span>
-      <span>•</span>
-      <span>BOOK NOW</span>
-      <span>•</span>
-      <span>ENDS 21st October 2026</span>
-      <span>•</span>
+    <div className="announcement-track">
+      <div className="announcement-content">
+        <span>✨</span>
+        <span>LIMITED TIME</span>
+        <span>•</span>
+        <span>50% OFF ALL SERVICES</span>
+        <span>•</span>
+        <span>ENDS 21 OCTOBER</span>
+        <span>•</span>
+        <span>BOOK NOW</span>
 
-      <span>✨</span>
-      <span>LIMITED TIME</span>
-      <span>•</span>
-      <span>50% OFF ALL SERVICES</span>
-      <span>•</span>
-      <span>BOOK NOW</span>
-      <span>•</span>
-      <span>ENDS 21St October 2026</span>
-      <span>•</span>
-
+        <span>✨</span>
+        <span>LIMITED TIME</span>
+        <span>•</span>
+        <span>50% OFF ALL SERVICES</span>
+        <span>•</span>
+        <span>ENDS 21 OCTOBER</span>
+        <span>•</span>
+        <span>BOOK NOW</span>
+      </div>
     </div>
+  </div>
+
+  {/* Mobile (premium static) */}
+  <div className="sm:hidden rounded-2xl border border-[hsl(var(--gold))]/40 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md px-5 py-4 text-center shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
+
+    <p className="text-[11px] uppercase tracking-[0.25em] text-[hsl(var(--gold-soft))]">
+      Limited Time
+    </p>
+
+    <h3 className="mt-1 font-display text-[28px] font-bold leading-none text-white">
+      50% OFF
+    </h3>
+
+    <p className="mt-1 text-[14px] font-medium text-white/90">
+      All Beauty Services
+    </p>
+
+    <p className="mt-2 text-[12px] uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))]">
+      Ends 21 October
+    </p>
 
   </div>
+
 </div>
-    Now taking bookings · Christchurch
-     </span>
-</div>
-<SplitText
-  as="h1"
-  text="Beauty care that feels personal."
-  className="font-display mt-10 sm:mt-12 text-[clamp(48px,11vw,120px)] leading-[0.98] sm:leading-[0.94] tracking-tight block"
-  stagger={55}
-/>
-          <p className="reveal max-w-[600px] mt-7 sm:mt-10 text-[16.5px] sm:text-[19px] leading-[1.65] text-white/75">
-            A small, considered salon on Stanmore Road. Facials, brows, threading, waxing and nails — delivered slowly, by hands that know what they are doing.
-          </p>
-
-          <div className="reveal mt-9 sm:mt-12 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
-            <MagneticButton
-              as="a"
-              href={BRAND.bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-              strength={16}
-              className="group inline-flex items-center justify-between sm:justify-start gap-3 pl-6 pr-2 h-14 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] font-medium tracking-[0.14em] uppercase text-[12px] hover:bg-[hsl(var(--gold-soft))] hover:shadow-[0_20px_40px_-15px_hsl(var(--gold)/0.55)]"
-            >
-              <span>Book an appointment</span>
-              <span className="h-11 w-11 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45"><ArrowUpRight className="h-4 w-4" /></span>
-            </MagneticButton>
-            <a href="#services" className="inline-flex items-center justify-center gap-3 h-14 px-6 rounded-full border border-white/25 text-[12px] uppercase tracking-[0.18em] text-white/90 hover:bg-white/10 hover:border-white/50 transition-colors duration-500 active:bg-white/15">Explore services</a>
-          </div>
-
-          <p className="reveal mt-6 sm:mt-8 text-[12px] text-white/60 tracking-wide">
-            Easy online booking · Flexible appointments · Friendly, professional care
-          </p>
-        </div>
-      </div>
-
-      <div className="absolute bottom-0 left-0 right-0 hairline" />
-    </section>
-  );
 }
