@@ -51,62 +51,55 @@ export default function Hero() {
         <span className="absolute top-[46%] left-[54%] h-1 w-1 rounded-full bg-[hsl(var(--gold-soft))]/60 animate-floaty" style={{ animationDelay: '.6s', transform: 'translate3d(calc(var(--mx) * 1.8), calc(var(--my) * 1.8), 0)', transition: 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)' }} />
       </div>
         
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-6 w-full pb-20 sm:pb-28 pt-32 sm:pt-44 text-[hsl(var(--paper))] relative z-[2]">
+     <div className="mx-auto max-w-[1240px] px-5 sm:px-6 w-full pb-20 sm:pb-28 pt-32 sm:pt-44 text-[hsl(var(--paper))] relative z-[2]">
   <div className="max-w-[900px]">
-      <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
-  <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
-  <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
-   
-{/* Premium Announcement */}
 
-<div className="mb-5 w-full">
+    {/* Premium Announcement */}
+    <div className="mb-6 w-full">
+      <div className="hidden sm:block overflow-hidden rounded-2xl border border-[hsl(var(--gold))]/35 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
+        <div className="announcement-track">
+          <div className="announcement-content">
+            <span>✨</span>
+            <span>LIMITED TIME</span>
+            <span>•</span>
+            <span>50% OFF ALL SERVICES</span>
+            <span>•</span>
+            <span>ENDS 21 OCTOBER</span>
+            <span>•</span>
+            <span>BOOK NOW</span>
 
-  {/* Desktop (moving) */}
-  <div className="hidden sm:block overflow-hidden rounded-2xl border border-[hsl(var(--gold))]/35 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
+            <span>✨</span>
+            <span>LIMITED TIME</span>
+            <span>•</span>
+            <span>50% OFF ALL SERVICES</span>
+            <span>•</span>
+            <span>ENDS 21 OCTOBER</span>
+            <span>•</span>
+            <span>BOOK NOW</span>
+          </div>
+        </div>
+      </div>
 
-    <div className="announcement-track">
-      <div className="announcement-content">
-        <span>✨</span>
-        <span>LIMITED TIME</span>
-        <span>•</span>
-        <span>50% OFF ALL SERVICES</span>
-        <span>•</span>
-        <span>ENDS 21 OCTOBER</span>
-        <span>•</span>
-        <span>BOOK NOW</span>
-
-        <span>✨</span>
-        <span>LIMITED TIME</span>
-        <span>•</span>
-        <span>50% OFF ALL SERVICES</span>
-        <span>•</span>
-        <span>ENDS 21 OCTOBER</span>
-        <span>•</span>
-        <span>BOOK NOW</span>
+      <div className="sm:hidden rounded-2xl border border-[hsl(var(--gold))]/40 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md px-5 py-4 text-center shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
+        <p className="text-[11px] uppercase tracking-[0.25em] text-[hsl(var(--gold-soft))]">
+          Limited Time
+        </p>
+        <h3 className="mt-1 font-display text-[28px] font-bold leading-none text-white">
+          50% OFF
+        </h3>
+        <p className="mt-1 text-[14px] font-medium text-white/90">
+          All Beauty Services
+        </p>
+        <p className="mt-2 text-[12px] uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))]">
+          Ends 21 October
+        </p>
       </div>
     </div>
-  </div>
 
-  {/* Mobile (premium static) */}
-  <div className="sm:hidden rounded-2xl border border-[hsl(var(--gold))]/40 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-md px-5 py-4 text-center shadow-[0_18px_45px_-18px_hsl(var(--gold)/0.35)]">
-
-    <p className="text-[11px] uppercase tracking-[0.25em] text-[hsl(var(--gold-soft))]">
-      Limited Time
-    </p>
-
-    <h3 className="mt-1 font-display text-[28px] font-bold leading-none text-white">
-      50% OFF
-    </h3>
-
-    <p className="mt-1 text-[14px] font-medium text-white/90">
-      All Beauty Services
-    </p>
-
-    <p className="mt-2 text-[12px] uppercase tracking-[0.18em] text-[hsl(var(--gold-soft))]">
-      Ends 21 October
-    </p>
-
-  </div>
-
-</div>
-
+    {/* Now Taking Bookings */}
+    <div className="inline-flex items-center gap-3 pl-3 pr-4 py-2 rounded-full border border-white/15 bg-white/5 backdrop-blur-md reveal">
+      <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] shadow-[0_0_0_4px_hsl(var(--gold)/0.2)] animate-pulse" />
+      <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] sm:tracking-[0.32em] text-white/85">
+        Now taking bookings · Christchurch
+      </span>
+    </div>
