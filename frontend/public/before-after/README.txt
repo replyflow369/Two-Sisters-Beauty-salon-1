@@ -7,8 +7,8 @@ Filenames used by the site (do not rename):
   before-after-brows-after.png
   before-after-lash-before.png
   before-after-lash-after.png
-  before-after-lip-before.png
-  before-after-lip-after.png
+  before-after-facial-before.png
+  before-after-facial-after.png
 
 Recommended:
   - JPEG, 1200 × 1500 px (portrait 4:5)
