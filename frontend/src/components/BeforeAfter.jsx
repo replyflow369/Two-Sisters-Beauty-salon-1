@@ -3,7 +3,8 @@ import { ArrowLeftRight } from 'lucide-react';
 
 // Comparisons reference plain files in /public/before-after/ so the salon can
 // swap real .jpg photos in later without any code change (see README.txt).
-const treatments = [
+// Comparisons reference plain files in /public/before-after/
+const ITEMS = [
   {
     key: 'brows',
     treatment: 'Henna Brows',
@@ -26,6 +27,10 @@ const treatments = [
     after: '/before-after/before-after-facial-after.png',
   },
 ];
+
+function Slider({ item }) {
+  const [pos, setPos] = useState(52);
+  const wrapRef = useRef(null);
 function Slider({ item }) {
   const [pos, setPos] = useState(52); // percentage from left
   const wrapRef = useRef(null);
