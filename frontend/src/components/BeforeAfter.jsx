@@ -4,28 +4,27 @@ import { ArrowLeftRight } from 'lucide-react';
 // Comparisons reference plain files in /public/before-after/ so the salon can
 // swap real .jpg photos in later without any code change (see README.txt).
 const ITEMS = [
-  {
-    key: 'brows',
-    treatment: 'Henna Brows',
-    caption: 'Softly shaped, tinted and defined for a natural finish.',
-    before: '/before-after/before-after-brows-before.svg',
-    after: '/before-after/before-after-brows-after.svg',
-  },
-  {
-    key: 'lash',
-    treatment: 'Lash Lift & Tint',
-    caption: 'A gentle curl and tint to open the eye — no extensions needed.',
-    before: '/before-after/before-after-lash-before.svg',
-    after: '/before-after/before-after-lash-after.svg',
-  },
-  {
-    key: 'facial',
-    treatment: 'Clear Skin Facial',
-    caption: 'A calm one-hour treatment to cleanse, hydrate and refresh.',
-    before: '/before-after/before-after-facial-before.svg',
-    after: '/before-after/before-after-facial-after.svg',
-  },
-];
+{
+  key: 'brows',
+  treatment: 'Henna Brows',
+  caption: 'Softly shaped, tinted and defined for a natural finish.',
+  before: '/before-after/before-after-brows-before.png',
+  after: '/before-after/before-after-brows-after.png',
+},
+{
+  key: 'lash',
+  treatment: 'Lash Lift & Tint',
+  caption: 'A gentle curl and tint to open the eye — no extensions needed.',
+  before: '/before-after/before-after-lash-before.png',
+  after: '/before-after/before-after-lash-after.png',
+},
+{
+  key: 'facial',
+  treatment: 'Clear Skin Facial',
+  caption: 'A calm one-hour treatment to cleanse, hydrate and refresh.',
+  before: '/before-after/before-after-facial-before.png',
+  after: '/before-after/before-after-facial-after.png',
+},
 
 function Slider({ item }) {
   const [pos, setPos] = useState(52); // percentage from left
