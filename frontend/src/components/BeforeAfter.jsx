@@ -83,14 +83,6 @@ function Slider({ item }) {
           />
         </div>
 
-        <span className="absolute top-4 left-4 bg-black/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full">
-          Before
-        </span>
-
-        <span className="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full">
-          After
-        </span>
-
         <div
           className="absolute top-0 bottom-0 w-px bg-white"
           style={{ left: `${pos}%` }}
