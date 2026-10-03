@@ -81,9 +81,16 @@ const Home = () => {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+   <Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/treatments" element={<Services />} />
+  <Route path="/treatments/facials" element={<Services />} />
+  <Route path="/treatments/brows" element={<Services />} />
+  <Route path="/treatments/threading" element={<Services />} />
+  <Route path="/treatments/waxing" element={<Services />} />
+  <Route path="/treatments/manicures" element={<Services />} />
+  <Route path="/treatments/pedicures" element={<Services />} />
+</Routes>
     </BrowserRouter>
   );
 }
