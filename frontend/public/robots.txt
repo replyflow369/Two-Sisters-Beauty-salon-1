@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.twosistersbeautysalon.co.nz/sitemap.xml
