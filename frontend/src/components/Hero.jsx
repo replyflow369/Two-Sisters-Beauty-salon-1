@@ -73,38 +73,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Content */}
-      <div className="mx-auto max-w-[1240px] w-full px-5 sm:px-6 pt-32 sm:pt-44 pb-20 sm:pb-28 text-white relative z-10">
-
-        <div className="max-w-[900px]">
-
-
-                <h2 className="font-display text-[26px] sm:text-[40px] lg:text-[50px] leading-none">
-                  We're Opening
-                </h2>
-
-                <p className="text-[18px] sm:text-[26px] font-semibold text-[hsl(var(--gold-soft))]">
-                  15 October 2026
-                </p>
-
-                <div className="h-px w-20 bg-[hsl(var(--gold))]/40" />
-
-                <p className="text-[20px] sm:text-[30px] font-bold">
-                  First 100 Clients Receive
-                </p>
-
-                <p className="font-display text-[42px] sm:text-[64px] lg:text-[72px] leading-none text-[hsl(var(--gold))]">
-                  30% OFF
-                </p>
-
-                <p className="text-[15px] sm:text-[18px] text-white/85 max-w-[560px] leading-relaxed">
-                  Your first visit during <span className="font-semibold text-[hsl(var(--gold-soft))]">Opening Week.</span> Book early before appointments fill.
-                </p>
-
-              </div>
-            </div>
-          </div>
-
+      
           {/* Booking Badge */}
           <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-3 py-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] animate-pulse" />
