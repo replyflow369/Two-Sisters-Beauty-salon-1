@@ -78,18 +78,6 @@ export default function Hero() {
 
         <div className="max-w-[900px]">
 
-          {/* Grand Opening Card */}
-          <div className="mb-8">
-            <div className="rounded-3xl border border-[hsl(var(--gold))]/35 bg-gradient-to-r from-[hsl(var(--ink))]/95 via-[hsl(var(--gold))]/10 to-[hsl(var(--ink))]/95 backdrop-blur-xl p-5 sm:p-8 shadow-[0_25px_70px_-25px_hsl(var(--gold)/0.45)]">
-
-              <div className="flex flex-col items-center text-center gap-3">
-
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[hsl(var(--gold))]/15 border border-[hsl(var(--gold))]/30">
-                  <span className="text-lg">🎉</span>
-                  <span className="text-[11px] sm:text-[12px] uppercase tracking-[0.35em] text-[hsl(var(--gold-soft))]">
-                    Grand Opening
-                  </span>
-                </div>
 
                 <h2 className="font-display text-[26px] sm:text-[40px] lg:text-[50px] leading-none">
                   We're Opening
