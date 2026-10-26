@@ -84,7 +84,6 @@ export default function Hero() {
       {/* Hero content */}
       <div className="mx-auto max-w-[1240px] w-full px-5 sm:px-6 pt-32 sm:pt-44 pb-20 sm:pb-28 text-white relative z-10">
         <div className="max-w-[900px]">
-
           {/* Booking Badge */}
           <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-3 py-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))] animate-pulse" />
@@ -138,7 +137,6 @@ export default function Hero() {
             Opening 15 October 2026 · Easy online booking · Flexible
             appointments · Friendly, professional care
           </p>
-
         </div>
       </div>
 
