@@ -9,13 +9,14 @@ export default function Hero() {
   return (
     <section
       id="top"
+      aria-labelledby="hero-heading"
       className="relative isolate min-h-[92vh] overflow-hidden flex items-end"
     >
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <img
           src={HERO_IMAGE}
-          alt="Two Sisters Beauty Salon"
+          alt="Interior of Two Sisters Beauty Salon in Christchurch"
           className="h-full w-full object-cover object-[65%_50%] sm:object-center kenburns"
         />
 
@@ -39,28 +40,32 @@ export default function Hero() {
       {/* Hero content */}
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pt-32 pb-20 text-white sm:px-6 sm:pt-44 sm:pb-28">
         <div className="max-w-[900px]">
+
           {/* Booking badge */}
           <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-3 py-2 backdrop-blur-md">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[hsl(var(--gold))]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--gold))]" />
+
             <span className="text-[10px] uppercase tracking-[0.32em] text-white/85 sm:text-[11px]">
-              Now Taking Bookings · Christchurch
+              Christchurch Beauty Salon · Bookings Available
             </span>
           </div>
 
-          {/* Heading */}
+          {/* SEO Heading */}
           <SplitText
             as="h1"
-            text="Beauty care that feels personal."
-            className="mt-8 font-display text-[clamp(48px,11vw,120px)] leading-[0.94]"
+            text="Beauty Salon in Christchurch for Beautiful, Personalised Care."
+            className="mt-8 font-display text-[clamp(42px,9vw,100px)] leading-[0.98]"
             stagger={55}
           />
 
-          {/* Description */}
-          <p className="mt-7 max-w-[620px] text-[16px] leading-[1.65] text-white/80 sm:text-[19px]">
-            We're opening our doors on{' '}
-            <strong>15 October 2026</strong>. Enjoy calm, personalised beauty
-            care for facials, brows, threading, waxing and nails at our new
-            Christchurch salon.
+          {/* Homepage introduction */}
+          <p className="mt-7 max-w-[650px] text-[16px] leading-[1.65] text-white/80 sm:text-[19px]">
+            Welcome to Two Sisters Beauty Salon in Christchurch.
+            Enjoy personalised beauty treatments, including
+            relaxing facials, professional eyebrow threading,
+            eyebrow tinting, waxing, manicures and pedicures.
+            Discover your new favourite place for beauty and
+            self-care. Book your appointment online today.
           </p>
 
           {/* Buttons */}
@@ -69,11 +74,11 @@ export default function Hero() {
               as="a"
               href={BRAND.bookingUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               strength={16}
               className="group inline-flex h-14 items-center justify-between gap-3 rounded-full bg-[hsl(var(--gold))] pl-6 pr-2 text-[12px] font-medium uppercase text-[hsl(var(--ink))]"
             >
-              <span>Book Your Visit</span>
+              <span>Book Your Appointment</span>
 
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] transition-transform group-hover:rotate-45">
                 <ArrowUpRight className="h-4 w-4" />
@@ -84,15 +89,15 @@ export default function Hero() {
               href="#services"
               className="inline-flex h-14 items-center justify-center rounded-full border border-white/25 px-6 text-[12px] uppercase tracking-[0.18em] text-white/90"
             >
-              Explore Services
+              Explore Our Services
             </a>
           </div>
 
-          {/* Footer text */}
+          {/* Supporting text */}
           <p className="mt-6 text-[12px] tracking-wide text-white/60">
-            Opening 15 October 2026 · Easy online booking · Flexible
-            appointments · Friendly, professional care
+            Christchurch · Online Booking · Personalised Beauty Care
           </p>
+
         </div>
       </div>
 
