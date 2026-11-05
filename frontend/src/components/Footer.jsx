@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Facebook, ArrowUpRight } from 'lucide-react';
 import { BRAND, NAV } from '../mock';
 import MagneticButton from './motion/MagneticButton';
@@ -33,16 +34,39 @@ export default function Footer() {
           </div>
           <p className="mt-6 text-white/60 max-w-[380px] text-[15px] leading-relaxed">A calm, elegant salon on Stanmore Road offering considered care for skin, brows, face and body.</p>
           <div className="mt-6 flex gap-3">
-            {[Instagram, Facebook].map((I, i) => (
-              <a key={i} href="#" className="h-10 w-10 rounded-full border border-white/15 inline-flex items-center justify-center hover:bg-white/10 transition"><I className="h-4 w-4" /></a>
+            {[
+              { Icon: Instagram, label: 'Follow Two Sisters Beauty Salon on Instagram' },
+              { Icon: Facebook, label: 'Follow Two Sisters Beauty Salon on Facebook' },
+            ].map(({ Icon, label }, i) => (
+              <a
+                key={i}
+                href="#"
+                aria-label={label}
+                className="h-10 w-10 rounded-full border border-white/15 inline-flex items-center justify-center hover:bg-white/10 transition"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
             ))}
           </div>
         </div>
 
         <div>
+          <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">Treatments</p>
+          <ul className="mt-5 space-y-3 text-[14.5px]">
+            <li><Link to="/treatments/facials" className="text-white/75 hover:text-white link-underline">Facials</Link></li>
+            <li><Link to="/treatments/threading" className="text-white/75 hover:text-white link-underline">Eyebrow Threading</Link></li>
+            <li><Link to="/treatments/brows" className="text-white/75 hover:text-white link-underline">Eyebrow Tinting & Brows</Link></li>
+            <li><Link to="/treatments/waxing" className="text-white/75 hover:text-white link-underline">Waxing Services</Link></li>
+            <li><Link to="/treatments/manicures" className="text-white/75 hover:text-white link-underline">Manicures</Link></li>
+            <li><Link to="/treatments/pedicures" className="text-white/75 hover:text-white link-underline">Pedicures</Link></li>
+          </ul>
+        </div>
+
+        <div>
           <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">Menu</p>
           <ul className="mt-5 space-y-3 text-[14.5px]">
-            {NAV.map(n => <li key={n.href}><a href={n.href} className="text-white/75 hover:text-white link-underline">{n.label}</a></li>)}
+            <li><Link to="/treatments" className="text-white/75 hover:text-white link-underline">All Treatments</Link></li>
+            {NAV.map(n => <li key={n.href}><a href={n.href.startsWith('#') && window.location.pathname !== '/' ? `/${n.href}` : n.href} className="text-white/75 hover:text-white link-underline">{n.label}</a></li>)}
           </ul>
         </div>
 

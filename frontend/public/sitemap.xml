@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://www.twosistersbeautysalon.co.nz/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
-
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments/facials</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments/threading</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments/brows</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments/waxing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments/manicures</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.twosistersbeautysalon.co.nz/treatments/pedicures</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

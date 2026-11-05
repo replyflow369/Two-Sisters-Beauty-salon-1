@@ -66,7 +66,7 @@ function Slider({ item }) {
       >
         <img
           src={item.after}
-          alt={`${item.treatment} after`}
+          alt={`${item.treatment} result after treatment at Two Sisters Beauty Salon Christchurch`}
           className="absolute inset-0 w-full h-full object-cover"
           draggable={false}
         />
@@ -77,7 +77,7 @@ function Slider({ item }) {
         >
           <img
             src={item.before}
-            alt={`${item.treatment} before`}
+            alt={`${item.treatment} before treatment at Two Sisters Beauty Salon Christchurch`}
             className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
           />
