@@ -25,7 +25,12 @@ export default function Gallery() {
         <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[200px] md:auto-rows-[220px] gap-3 sm:gap-4" style={{ gridAutoFlow: 'dense' }}>
           {GALLERY.map((g, i) => (
             <figure key={i} className={`reveal group relative overflow-hidden rounded-2xl ${spanClass[g.size] || ''}`} style={{ transitionDelay: `${i*70}ms` }}>
-              <img src={g.src} alt={g.tag} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-110" />
+              <img
+                src={g.src}
+                alt={`${g.tag} beauty treatment at Two Sisters Beauty Salon Richmond Christchurch`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--ink))]/70 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
               <figcaption className="absolute left-4 bottom-4 text-white text-[11px] uppercase tracking-[0.28em] translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                 <span className="inline-flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[hsl(var(--gold-soft))]" /> {g.tag}</span>

@@ -17,6 +17,9 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CursorOrb from './components/motion/CursorOrb';
 import Concierge from './components/Concierge';
+import SEO from './components/SEO';
+import Treatments from './pages/Treatments';
+import ServiceDetail from './pages/ServiceDetail';
 
 function useScrollReveal() {
   useEffect(() => {
@@ -55,6 +58,11 @@ const Home = () => {
   useTheme();
   return (
     <div className="App bg-background text-foreground">
+      <SEO
+        title="Two Sisters Beauty Salon Richmond Christchurch | Facials, Brows & Waxing"
+        description="Visit Two Sisters Beauty Salon in Richmond, Christchurch. Professional facials, eyebrow threading, tinting, waxing, manicures & pedicures. Book online today."
+        canonical="https://www.twosistersbeautysalon.co.nz/"
+      />
       <div id="scroll-progress" />
       <CursorOrb />
       <Navigation />
@@ -81,16 +89,16 @@ const Home = () => {
 function App() {
   return (
     <BrowserRouter>
-   <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/treatments" element={<Services />} />
-  <Route path="/treatments/facials" element={<Services />} />
-  <Route path="/treatments/brows" element={<Services />} />
-  <Route path="/treatments/threading" element={<Services />} />
-  <Route path="/treatments/waxing" element={<Services />} />
-  <Route path="/treatments/manicures" element={<Services />} />
-  <Route path="/treatments/pedicures" element={<Services />} />
-</Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/treatments" element={<Treatments />} />
+        <Route path="/treatments/facials" element={<ServiceDetail serviceKey="facials" />} />
+        <Route path="/treatments/threading" element={<ServiceDetail serviceKey="threading" />} />
+        <Route path="/treatments/brows" element={<ServiceDetail serviceKey="brows" />} />
+        <Route path="/treatments/waxing" element={<ServiceDetail serviceKey="waxing" />} />
+        <Route path="/treatments/manicures" element={<ServiceDetail serviceKey="manicures" />} />
+        <Route path="/treatments/pedicures" element={<ServiceDetail serviceKey="pedicures" />} />
+      </Routes>
     </BrowserRouter>
   );
 }

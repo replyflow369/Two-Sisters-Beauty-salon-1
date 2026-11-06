@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { BRAND, NAV } from '../mock';
 import ThemeToggle from './ThemeToggle';
@@ -31,7 +32,7 @@ export default function Navigation() {
         <div className="mx-auto max-w-[1240px] px-5 sm:px-6">
           <div className="flex items-center justify-between h-[64px] sm:h-[76px]">
             {/* Brand */}
-            <a href="#top" className="flex items-center gap-2.5 sm:gap-3 group">
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
               <span className="relative inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[hsl(var(--gold))]/60 bg-gradient-to-br from-[hsl(var(--paper))] to-[hsl(var(--paper-2))] dark:from-[hsl(var(--ink-soft))] dark:to-[hsl(var(--ink))]">
                 <span className="font-serif text-[hsl(var(--gold-deep))] text-lg sm:text-xl italic leading-none">Ts</span>
                 <span className="absolute -inset-0.5 rounded-full border border-[hsl(var(--gold))]/25 transition-opacity opacity-0 group-hover:opacity-100" />
@@ -40,12 +41,13 @@ export default function Navigation() {
                 <span className="block font-display text-[18px] sm:text-[22px] leading-none tracking-tight">Two Sisters</span>
                 <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.28em] sm:tracking-[0.35em] text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold-soft))] mt-1">Beauty Salon</span>
               </span>
-            </a>
+            </Link>
 
             {/* Nav */}
             <nav className="hidden lg:flex items-center gap-9 text-[13.5px]">
+              <Link to="/treatments" className="link-underline text-foreground/80 hover:text-foreground transition-colors">Treatments</Link>
               {NAV.map((n) => (
-                <a key={n.href} href={n.href} className="link-underline text-foreground/80 hover:text-foreground transition-colors">{n.label}</a>
+                <a key={n.href} href={n.href.startsWith('#') && window.location.pathname !== '/' ? `/${n.href}` : n.href} className="link-underline text-foreground/80 hover:text-foreground transition-colors">{n.label}</a>
               ))}
             </nav>
 
@@ -66,8 +68,9 @@ export default function Navigation() {
               <button onClick={() => setOpen(false)} className="h-10 w-10 rounded-full border border-border inline-flex items-center justify-center"><X className="h-5 w-5" /></button>
             </div>
             <div className="mt-12 flex flex-col gap-6">
+              <Link to="/treatments" onClick={() => setOpen(false)} className="font-display text-3xl hover:text-[hsl(var(--gold-deep))] dark:hover:text-[hsl(var(--gold))] transition-colors">Treatments</Link>
               {NAV.map((n, i) => (
-                <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="font-display text-3xl hover:text-[hsl(var(--gold-deep))] dark:hover:text-[hsl(var(--gold))] transition-colors" style={{ transitionDelay: `${i * 40}ms` }}>{n.label}</a>
+                <a key={n.href} href={n.href.startsWith('#') && window.location.pathname !== '/' ? `/${n.href}` : n.href} onClick={() => setOpen(false)} className="font-display text-3xl hover:text-[hsl(var(--gold-deep))] dark:hover:text-[hsl(var(--gold))] transition-colors" style={{ transitionDelay: `${i * 40}ms` }}>{n.label}</a>
               ))}
             </div>
             <div className="absolute bottom-8 left-8 right-8">
