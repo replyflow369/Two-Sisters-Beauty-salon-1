@@ -1,0 +1,34 @@
+
+name: Test Beauty Blog Generator
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate test article
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.8-flash
+        run: python blog-automation/publish_blog.py
+
+      - name: Save generated article for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: beauty-blog-test
+          path: frontend/public/blog/
+          if-no-files-found: error
