@@ -13,21 +13,19 @@ jobs:
 
     steps:
       - name: Check out website
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      - name: Check Python
+        run: python3 --version
 
       - name: Generate test article
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3.8-flash
-        run: python blog-automation/publish_blog.py
+        run: python3 blog-automation/publish_blog.py
 
       - name: Save generated article for review
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: beauty-blog-test
           path: frontend/public/blog/
