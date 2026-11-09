@@ -84,10 +84,25 @@ def log(message):
     print("[BLOG]", message, flush=True)
 
 
+
 def slugify(value):
     value = value.lower()
     value = re.sub(r"[^a-z0-9]+", "-", value)
-    return value.strip("-")[:75].strip("-")
+    value = value.strip("-")
+
+    # Keep complete words and limit URL length.
+    words = value.split("-")
+    slug = ""
+
+    for word in words:
+        candidate = f"{slug}-{word}" if slug else word
+
+        if len(candidate) > 65:
+            break
+
+        slug = candidate
+
+    return slug.strip("-")
 
 
 def count_words(value):
