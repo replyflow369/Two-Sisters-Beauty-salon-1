@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Phone, MapPin } from 'lucide-react';
 import { BRAND, HERO_IMAGE } from '../mock';
 import SplitText from './motion/SplitText';
 import MagneticButton from './motion/MagneticButton';
@@ -40,6 +40,52 @@ export default function Hero() {
       {/* Hero content */}
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pt-32 pb-20 text-white sm:px-6 sm:pt-44 sm:pb-28">
         <div className="max-w-[900px]">
+          
+          
+{/* Salon Contact Details */}
+<div className="mb-7 flex flex-col gap-4 rounded-2xl border border-white/20 bg-black/30 p-4 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
+
+  {/* Phone Number */}
+  <a
+    href="tel:+6439300449"
+    className="flex items-center gap-3 text-white transition-colors hover:text-[hsl(var(--gold))]"
+  >
+    <Phone className="h-5 w-5 shrink-0 text-[hsl(var(--gold))]" />
+
+    <div>
+      <span className="block text-[10px] uppercase tracking-[0.25em] text-white/60">
+        Call Us
+      </span>
+      <span className="text-base font-semibold tracking-wider">
+        03 930 0449
+      </span>
+    </div>
+  </a>
+
+  {/* Salon Address */}
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=327+Stanmore+Road%2C+Richmond%2C+Christchurch%2C+New+Zealand"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 text-white transition-colors hover:text-[hsl(var(--gold))]"
+  >
+    <MapPin className="h-5 w-5 shrink-0 text-[hsl(var(--gold))]" />
+
+    <div>
+      <span className="block text-[10px] uppercase tracking-[0.25em] text-white/60">
+        Visit Our Salon
+      </span>
+      <span className="text-sm font-semibold">
+        327 Stanmore Road, Richmond
+      </span>
+      <span className="block text-xs text-white/65">
+        Christchurch · Near Richmond Club
+      </span>
+    </div>
+  </a>
+
+</div>
+
 
           {/* Booking badge */}
           <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-3 py-2 backdrop-blur-md">
