@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pt-32 pb-20 text-white sm:px-6 sm:pt-44 sm:pb-28">
+      <div className="relative z-10 mx-auto w-full max-w-[1240px] px-5 pt-8 pb-20 text-white sm:px-6 sm:pt-12 sm:pb-28">
         <div className="max-w-[900px]">
           
           
