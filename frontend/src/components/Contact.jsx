@@ -19,7 +19,12 @@ export default function Contact() {
               { icon: MapPin, label: 'Address', value: BRAND.address },
               { icon: Phone, label: 'Phone', value: BRAND.phone, href: BRAND.phoneHref },
               { icon: Mail, label: 'Email', value: BRAND.email, href: `mailto:${BRAND.email}` },
-              { icon: Clock, label: 'Today', value: 'Open until 6:00 pm' },
+              {
+  icon: Clock,
+  label: 'Online Booking',
+  value: 'Check available appointments',
+  href: BRAND.bookingUrl,
+},
             ].map((c) => (
               <a key={c.label} href={c.href || '#'} className="group rounded-2xl border border-border/70 p-5 hover:border-[hsl(var(--gold))]/60 hover:-translate-y-0.5 transition-all">
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[hsl(var(--gold))]/50 text-[hsl(var(--gold-deep))] dark:text-[hsl(var(--gold-soft))]"><c.icon className="h-4 w-4" strokeWidth={1.6} /></span>
