@@ -16,7 +16,12 @@ export default function Contact() {
 
           <div className="mt-10 grid sm:grid-cols-2 gap-5">
             {[
-              { icon: MapPin, label: 'Address', value: BRAND.address },
+              {
+  icon: MapPin,
+  label: 'Visit Our Salon',
+  value: BRAND.address,
+  href: 'https://www.google.com/maps/search/?api=1&query=327+Stanmore+Road%2C+Richmond%2C+Christchurch+8013',
+},
               { icon: Phone, label: 'Phone', value: BRAND.phone, href: BRAND.phoneHref },
               { icon: Mail, label: 'Email', value: BRAND.email, href: `mailto:${BRAND.email}` },
               {
