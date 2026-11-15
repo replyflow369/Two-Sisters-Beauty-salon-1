@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, ArrowUpRight } from 'lucide-react';
@@ -5,24 +6,10 @@ import { BRAND, NAV } from '../mock';
 import MagneticButton from './motion/MagneticButton';
 
 export default function Footer() {
-  const socialLinks = [
-    {
-      Icon: Instagram,
-      label: 'Follow us on Instagram',
-      href: 'https://www.instagram.com/twosistersbeautychch/',
-    },
-    {
-      Icon: Facebook,
-      label: 'Follow us on Facebook',
-      href: 'https://www.facebook.com/Twosistersbeautysalonchch/',
-    },
-  ];
-
   return (
     <footer className="relative bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden grain">
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-[hsl(var(--gold))]/8 blur-[140px]" />
 
-      {/* Big CTA */}
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 pt-20 sm:pt-24 pb-14 sm:pb-16 border-b border-white/10">
         <div className="grid lg:grid-cols-[1.4fr_.6fr] gap-8 sm:gap-10 items-end">
           <h3 className="font-display text-[clamp(38px,9vw,96px)] leading-[.98] tracking-tight">
@@ -42,23 +29,19 @@ export default function Footer() {
             className="group inline-flex items-center justify-between gap-4 h-14 sm:h-16 pl-6 sm:pl-7 pr-2 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] uppercase tracking-[0.16em] font-medium text-[12px] sm:text-[13px] hover:bg-[hsl(var(--gold-soft))]"
           >
             Book an appointment
-            <span className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45">
+            <span className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 group-hover:rotate-45">
               <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
             </span>
           </MagneticButton>
         </div>
       </div>
 
-      {/* Main Footer */}
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 py-16 grid lg:grid-cols-4 gap-10">
-
-        {/* Salon Branding and Social Links */}
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <span className="h-11 w-11 rounded-full border border-[hsl(var(--gold))]/60 inline-flex items-center justify-center font-serif italic text-[hsl(var(--gold-soft))]">
               Ts
             </span>
-
             <div>
               <p className="font-display text-2xl leading-none">Two Sisters</p>
               <p className="text-[10px] uppercase tracking-[0.35em] text-[hsl(var(--gold-soft))] mt-1">
@@ -72,27 +55,32 @@ export default function Footer() {
           </p>
 
           <div className="mt-6 flex gap-3">
-            {socialLinks.map(({ Icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="h-10 w-10 rounded-full border border-white/15 inline-flex items-center justify-center hover:bg-white/10 transition"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/twosistersbeautychch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Two Sisters Beauty Salon on Instagram"
+              className="h-10 w-10 rounded-full border border-white/15 inline-flex items-center justify-center hover:bg-white/10 transition"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+
+            <a
+              href="https://www.facebook.com/Twosistersbeautysalonchch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Two Sisters Beauty Salon on Facebook"
+              className="h-10 w-10 rounded-full border border-white/15 inline-flex items-center justify-center hover:bg-white/10 transition"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
           </div>
         </div>
 
-        {/* Treatments */}
         <div>
           <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">
             Treatments
           </p>
-
           <ul className="mt-5 space-y-3 text-[14.5px]">
             <li><Link to="/treatments/facials" className="text-white/75 hover:text-white link-underline">Facials</Link></li>
             <li><Link to="/treatments/threading" className="text-white/75 hover:text-white link-underline">Eyebrow Threading</Link></li>
@@ -103,19 +91,16 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Menu */}
         <div>
           <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">
             Menu
           </p>
-
           <ul className="mt-5 space-y-3 text-[14.5px]">
             <li>
               <Link to="/treatments" className="text-white/75 hover:text-white link-underline">
                 All Treatments
               </Link>
             </li>
-
             {NAV.map((n) => (
               <li key={n.href}>
                 <a
@@ -133,187 +118,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Salon Contact Details */}
         <div>
           <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">
             Salon
           </p>
-
-          <ul className="mt-5 space-y-3 text-[14.5px] text-white/75">
-            <li>{BRAND.address}</li>
-
-            <li>
-              <a href={BRAND.phoneHref} className="hover:text-white link-underline">
-                {BRAND.phone}
-              </a>
-            </li>
-
-            <li>
-              <a
-                href={`mailto:${BRAND.email}`}
-                className="hover:text-white link-underline break-all"
-              >
-                {BRAND.email}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="relative border-t border-white/10">
-        <div className="mx-auto max-w-[1240px] px-5 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-white/50">
-          <p>
-            © {new Date().getFullYear()} {BRAND.name} {BRAND.tagline}. All rights reserved.
-          </p>
-
-          <p className="uppercase tracking-[0.28em] text-[10.5px]">
-            Christchurch · New Zealand
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}```jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Instagram, Facebook, ArrowUpRight } from 'lucide-react';
-import { BRAND, NAV } from '../mock';
-import MagneticButton from './motion/MagneticButton';
-
-export default function Footer() {
-  const socialLinks = [
-    {
-      Icon: Instagram,
-      label: 'Follow Two Sisters Beauty Salon on Instagram',
-      href: 'https://www.instagram.com/twosistersbeautychch/',
-    },
-    {
-      Icon: Facebook,
-      label: 'Follow Two Sisters Beauty Salon on Facebook',
-      href: 'https://www.facebook.com/Twosistersbeautysalonchch/',
-    },
-  ];
-
-  return (
-    <footer className="relative bg-[hsl(var(--ink))] text-[hsl(var(--paper))] overflow-hidden grain">
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-[hsl(var(--gold))]/8 blur-[140px]" />
-
-      {/* Big CTA */}
-      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 pt-20 sm:pt-24 pb-14 sm:pb-16 border-b border-white/10">
-        <div className="grid lg:grid-cols-[1.4fr_.6fr] gap-8 sm:gap-10 items-end">
-          <h3 className="font-display text-[clamp(38px,9vw,96px)] leading-[.98] tracking-tight">
-            Beautiful, considered care —<br />
-            <span className="italic text-[hsl(var(--gold-soft))]">
-              book yours today.
-            </span>
-          </h3>
-
-          <MagneticButton
-            as="a"
-            href={BRAND.bookingUrl}
-            target="_blank"
-            rel="noreferrer"
-            strength={18}
-            className="group inline-flex items-center justify-between gap-4 h-14 sm:h-16 pl-6 sm:pl-7 pr-2 rounded-full bg-[hsl(var(--gold))] text-[hsl(var(--ink))] uppercase tracking-[0.16em] font-medium text-[12px] sm:text-[13px] hover:bg-[hsl(var(--gold-soft))]"
-          >
-            Book an appointment
-            <span className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] inline-flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:rotate-45">
-              <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
-            </span>
-          </MagneticButton>
-        </div>
-      </div>
-
-      {/* Main */}
-      <div className="relative mx-auto max-w-[1240px] px-5 sm:px-6 py-16 grid lg:grid-cols-4 gap-10">
-        <div className="lg:col-span-2">
-          <div className="flex items-center gap-3">
-            <span className="h-11 w-11 rounded-full border border-[hsl(var(--gold))]/60 inline-flex items-center justify-center font-serif italic text-[hsl(var(--gold-soft))]">
-              Ts
-            </span>
-
-            <div>
-              <p className="font-display text-2xl leading-none">Two Sisters</p>
-              <p className="text-[10px] uppercase tracking-[0.35em] text-[hsl(var(--gold-soft))] mt-1">
-                Beauty Salon
-              </p>
-            </div>
-          </div>
-
-          <p className="mt-6 text-white/60 max-w-[380px] text-[15px] leading-relaxed">
-            A calm, elegant salon on Stanmore Road offering considered care for skin, brows, face and body.
-          </p>
-
-          {/* Social media links */}
-          <div className="mt-6 flex gap-3">
-            {socialLinks.map(({ Icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="h-10 w-10 rounded-full border border-white/15 inline-flex items-center justify-center hover:bg-white/10 transition"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Treatments */}
-        <div>
-          <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">
-            Treatments
-          </p>
-
-          <ul className="mt-5 space-y-3 text-[14.5px]">
-            <li><Link to="/treatments/facials" className="text-white/75 hover:text-white link-underline">Facials</Link></li>
-            <li><Link to="/treatments/threading" className="text-white/75 hover:text-white link-underline">Eyebrow Threading</Link></li>
-            <li><Link to="/treatments/brows" className="text-white/75 hover:text-white link-underline">Eyebrow Tinting & Brows</Link></li>
-            <li><Link to="/treatments/waxing" className="text-white/75 hover:text-white link-underline">Waxing Services</Link></li>
-            <li><Link to="/treatments/manicures" className="text-white/75 hover:text-white link-underline">Manicures</Link></li>
-            <li><Link to="/treatments/pedicures" className="text-white/75 hover:text-white link-underline">Pedicures</Link></li>
-          </ul>
-        </div>
-
-        {/* Menu */}
-        <div>
-          <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">
-            Menu
-          </p>
-
-          <ul className="mt-5 space-y-3 text-[14.5px]">
-            <li>
-              <Link to="/treatments" className="text-white/75 hover:text-white link-underline">
-                All Treatments
-              </Link>
-            </li>
-
-            {NAV.map(n => (
-              <li key={n.href}>
-                <a
-                  href={
-                    n.href.startsWith('#') && window.location.pathname !== '/'
-                      ? `/${n.href}`
-                      : n.href
-                  }
-                  className="text-white/75 hover:text-white link-underline"
-                >
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Salon contact details */}
-        <div>
-          <p className="text-[11px] uppercase tracking-[0.32em] text-[hsl(var(--gold-soft))]">
-            Salon
-          </p>
-
           <ul className="mt-5 space-y-3 text-[14.5px] text-white/75">
             <li>{BRAND.address}</li>
             <li>
@@ -322,10 +130,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href={`mailto:${BRAND.email}`}
-                className="hover:text-white link-underline break-all"
-              >
+              <a href={`mailto:${BRAND.email}`} className="hover:text-white link-underline break-all">
                 {BRAND.email}
               </a>
             </li>
@@ -333,13 +138,11 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="relative border-t border-white/10">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-white/50">
           <p>
             © {new Date().getFullYear()} {BRAND.name} {BRAND.tagline}. All rights reserved.
           </p>
-
           <p className="uppercase tracking-[0.28em] text-[10.5px]">
             Christchurch · New Zealand
           </p>
