@@ -1,120 +1,96 @@
-    )
-    atomic_write(index_file, content)
+import os
+import re
+import json
+import html
+import time
+import hashlib
+import urllib.request
+import urllib.error
+import xml.etree.ElementTree as ET
+
+from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from html.parser import HTMLParser
 
 
 # ============================================================
-# SITEMAP
+# CONFIGURATION
 # ============================================================
 
-def update_sitemap(canonical, date):
-    sitemap = PUBLIC / "sitemap.xml"
+ROOT = Path.cwd()
+PUBLIC = ROOT / "frontend" / "public"
+BLOG = PUBLIC / "blog"
+BASE_URL = "https://www.twosistersbeautysalon.co.nz"
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+NZ = ZoneInfo("Pacific/Auckland")
 
-    if not sitemap.exists():
-        log("No sitemap.xml found; sitemap update skipped.")
-        return
+MAX_RETRIES = 4
+MIN_WORDS = 450
+MAX_WORDS = 1300
+MAX_ARTICLES = 100
 
-    tree = ET.parse(sitemap)
-    root = tree.getroot()
+TOPICS = [
+    "How to build a simple facial skincare routine",
+    "Eyebrow threading versus waxing: understanding the differences",
+    "How to prepare for a professional facial",
+    "What to know before your first eyebrow tint",
+    "Simple habits for healthier-looking nails",
+    "How to care for your skin after a facial",
+    "How often should you review your brow grooming routine?",
+    "A beginner's guide to choosing a manicure",
+    "What to expect during a professional pedicure",
+    "Everyday beauty habits that are easy to maintain",
+    "Simple ways to look after your skin during winter",
+    "What to consider when choosing a beauty treatment",
+    "Everyday eyebrow grooming tips",
+    "How to maintain healthy-looking hands and feet",
+    "A beginner's guide to facial treatments",
+    "How to choose a gentle cleanser for your skin",
+    "What to know about moisturising your skin every day",
+    "Simple ways to care for sensitive-feeling skin",
+    "How to make your skincare routine easier to follow",
+    "What to consider before booking an eyebrow treatment",
+    "How to keep brows looking neat between appointments",
+    "A simple guide to choosing a nail shape",
+    "How to care for your hands during colder weather",
+    "What to know about looking after your feet at home",
+    "How to prepare for a relaxing beauty appointment",
+    "Everyday habits that can help your skin feel comfortable",
+    "How to look after your brows after grooming",
+    "A beginner's guide to facial aftercare",
+    "How to create a simple evening skincare routine",
+    "What to consider when choosing a facial treatment",
+    "Simple self-care ideas for busy weeks",
+    "How to keep your beauty routine practical and consistent",
+    "What to know about professional waxing appointments",
+    "How to care for your nails between salon visits",
+]
 
-    # Respect the namespace already used by the sitemap.
-    namespace = ""
-    if root.tag.startswith("{"):
-        namespace = root.tag.split("}", 1)[0] + "}"
+SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
-    url_tag = namespace + "url"
-    loc_tag = namespace + "loc"
-    lastmod_tag = namespace + "lastmod"
+ALLOWED_TAGS = {
+    "h2", "h3", "p", "ul", "ol", "li",
+    "strong", "em", "blockquote", "a", "br"
+}
+VOID_TAGS = {"br"}
+BLOCKED_TAGS = {
+    "script", "style", "iframe", "form", "svg", "object",
+    "embed", "video", "audio", "textarea", "template"
+}
 
-    existing = {
-        (node.text or "").strip()
-        for node in root.findall(".//" + loc_tag)
-    }
-
-    if canonical in existing:
-        return
-
-    url_node = ET.SubElement(root, url_tag)
-    ET.SubElement(url_node, loc_tag).text = canonical
-    ET.SubElement(url_node, lastmod_tag).text = date.date().isoformat()
-
-    temporary = sitemap.with_name(sitemap.name + ".tmp")
-    tree.write(temporary, encoding="utf-8", xml_declaration=True)
-    temporary.replace(sitemap)
-
-    log("Sitemap updated.")
+# These checks catch common fabricated first-person/customer claims.
+# They are safeguards, not a substitute for human fact-checking.
+UNSUPPORTED_CLAIM_PATTERNS = [
+    r"\bwe (?:often|regularly|frequently|always|typically) (?:see|hear|find|tell|recommend|advise|help)\b",
+    r"\b(?:our|the salon's) clients (?:often|regularly|frequently|usually|typically|love|prefer|like)\b",
+    r"\bmany clients (?:like|love|choose|prefer|ask|tell)\b",
+    r"\bclients often\b",
+    r"\bhere at two sisters\b",
+    r"\bin our salon\b",
+    r"\bwhen you visit us\b",
+    r"\bwe look forward to welcoming\b",
+]
 
 
 # ============================================================
-# MAIN GENERATION PROCESS
-# ============================================================
-
-def main():
-    log("Starting Two Sisters Beauty Salon blog generator.")
-
-    if not PUBLIC.exists():
-        raise RuntimeError("frontend/public folder was not found.")
-
-    BLOG.mkdir(parents=True, exist_ok=True)
-    now = datetime.now(NZ)
-    slugs = existing_slugs()
-    topic = choose_topic(slugs)
-
-    log("Selected topic: " + topic)
-
-    article = ask_gemini(topic)
-
-    title = article["title"].strip()
-    description = article["description"].strip()
-    excerpt = article["excerpt"].strip()
-    body = clean_html(article["body_html"])
-
-    validate_article(article, body)
-
-    slug = slugify(title)
-    if not slug:
-        raise ValueError("Could not create a valid article URL.")
-
-    if slug in slugs:
-        raise ValueError("Duplicate article URL detected: " + slug)
-
-    folder = BLOG / slug
-    if folder.exists():
-        raise ValueError("Article folder already exists: " + slug)
-
-    canonical = BASE_URL + "/blog/" + slug + "/"
-
-    article_content = f"""
-<article>
-<p><small>Beauty advice · {now.strftime('%d %B %Y')}</small></p>
-<h1>{html.escape(title)}</h1>
-<p>{html.escape(description)}</p>
-{body}
-<p><small>For persistent symptoms or medical concerns, seek advice from an appropriately qualified health professional.</small></p>
-</article>
-"""
-
-    article_page = page(title, description, article_content, canonical)
-
-    # Write the article only after all content checks pass.
-    folder.mkdir(parents=True)
-    atomic_write(folder / "index.html", article_page)
-
-    update_blog_index(article, slug, now)
-    update_sitemap(canonical, now)
-    save_topic_history(topic)
-
-    log("Article generation completed successfully.")
-    log("Article title: " + title)
-    log("Article URL: " + canonical)
-    log("Article word count: " + str(count_words(body)))
-    log("Article SHA256: " + hashlib.sha256(
-        article_page.encode("utf-8")
-    ).hexdigest())
-
-
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as error:
-        log("GENERATION FAILED: " + str(error))
-        raise
